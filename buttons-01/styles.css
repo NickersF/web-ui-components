@@ -1,1 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    /* Base */
+    --bg-color: #131313;
+    --font-color: #676767;
+    --btn-bg: #202020;
+    --btn-bg-over: #282828;
+    --btn-bg-down: #222222;
+    --btn-text: #676767;
+    
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: #2a9664;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+/* Button base */
+button.base-solid {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-bg);
+    padding: 4px;
+    transition: all .25s ease-in-out;
+}
+
+button.base-solid:hover {
+    background-color: var(--btn-bg-over);
+}
+
+button.base-solid:active {
+    background-color: var(--btn-bg-down);
+}
+
+button.base-solid:focus {
+    outline: var(--btn-focus-ring) solid 1px;
+}
+
+/* Button outline */
+button.base-outline {
+    background-color: transparent;
+    border: 1px solid var(--btn-border);
+}
