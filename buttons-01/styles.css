@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    /* Base */
+    --bg-color: #131313;
+    --font-color: #676767;
+    --btn-bg-base: #1c1c1c;
+    --btn-bg-base-down: #1a1a1a;
+    --btn-bg: #202020;
+    --btn-bg-over: #282828;
+    --btn-bg-down: #222222;
+    
+    --btn-text: #676767;
+    --btn-text-over: #777777;
+    --btn-text-down: #5b5b5b;
+    
+    /* Utils */
+    --4px: 4px;
+    
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: rgba(42, 150, 100, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+/* Button base */
+button.base {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--4px);
+    padding: var(--4px);
+    transition: all 150ms ease-in-out;
+}
+
+button.base:hover {
+    background-color: var(--btn-bg-over);
+    border: 1px solid var(--btn-text-over);
+    color: var(--btn-text-over);
+}
+
+button.base:active {
+    background-color: var(--btn-bg-down);
+    color: var(--btn-text-down);
+    border: 1px solid var(--btn-text-down);
+}
+
+/* Button outline */
+button.outline {
+    background-color: transparent;
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--4px);
+    padding: var(--4px);
+    transition: all 150ms ease-in-out;
+}
+
+button.outline:hover {
+    border: 1px solid var(--btn-text-over);
+    color: var(--btn-text-over);
+}
+
+button.outline:active {
+    border: 1px solid var(--btn-bg-down);
+    color: var(--btn-text-down);
+}
+
+/* Button base */
+button.solid {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-bg);
+    border-radius: var(--4px);
+    padding: var(--4px);
+    transition: all 150ms ease-in-out;
+}
+
+button.solid:hover {
+    background-color: var(--btn-bg-over);
+    color: var(--btn-text-over);
+    border: 1px solid var(--btn-bg-over);
+}
+
+button.solid:active {
+    background-color: var(--btn-bg-down);
+    color: var(--btn-text-down);
+    border: 1px solid var(--btn-bg-down);
+}
+
+button.base:focus, button.solid:focus, button.outline:focus {
+    outline: none;
+    /*outline: var(--btn-focus-ring) solid 1px;*/
+}
