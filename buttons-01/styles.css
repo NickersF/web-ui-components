@@ -45,7 +45,7 @@ button.base {
     border: 1px solid var(--btn-border);
     border-radius: var(--4px);
     padding: var(--4px);
-    transition: all .25s ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 button.base:hover {
@@ -67,7 +67,7 @@ button.outline {
     border: 1px solid var(--btn-border);
     border-radius: var(--4px);
     padding: var(--4px);
-    transition: all .25s ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 button.outline:hover {
@@ -87,7 +87,7 @@ button.solid {
     border: 1px solid var(--btn-bg);
     border-radius: var(--4px);
     padding: var(--4px);
-    transition: all .25s ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 button.solid:hover {
