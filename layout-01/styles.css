@@ -1,1 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root {
+    /* Base */
+    --bg-color: #131313;
+    --font-color: #676767;
+    --btn-bg-base: #1c1c1c;
+    --btn-bg-base-down: #1a1a1a;
+    --btn-bg: #202020;
+    --btn-bg-over: #282828;
+    --btn-bg-down: #222222;
+
+    --btn-text: #676767;
+    --btn-text-over: #777777;
+    --btn-text-down: #5b5b5b;
+
+    /* Utils */
+    --4px: 4px;
+
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: rgba(42, 150, 100, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: [first-col] 25% [second-col] 25% [third-col] 25% [fourth-col] 25%;
+    grid-template-rows: [first-row] 25% [second-row] 25% [third-row] 25% [fourth-row] 25%;
+    background-color: var(--bg-color);
+}
+
+.gr-item-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: var(--btn-focus-ring);
+    border-radius: 16px;
+}
+
+.gr-item-2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: var(--btn-focus-ring);
+    border-radius: 16px;
+}
