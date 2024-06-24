@@ -14,27 +14,81 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    column-gap: 1rem;
-    row-gap: 1rem;
+    column-gap: 8rem;
+    grid-template-areas:
+        "card1 card2 card3";
     background-color: aliceblue;
+    padding: 12rem 8rem;
+}
+
+/* With centered cards */
+.container-2 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 8rem;
+    grid-template-areas:
+        "card1 card2 card3";
+    background-color: aliceblue;
+    padding: 12rem 8rem;
 }
 
 @media screen and (max-width: 680px) {
     .container-1 {
         display: grid;
         grid-template-columns: 1fr;
+        row-gap: 1rem;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3";
+        padding: 1rem;
+    }
+
+    .container-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3";
+        padding: 1rem;
     }
 }
 
 .card-1 {
+    grid-area: card1;
     background-color: #bc453b;
 }
 
 .card-2 {
-    background-color: #9e6fc8;
+    grid-area: card2;
+    background-color: #bc453b;
 }
 
 .card-3 {
+    grid-area: card3;
     background-color: #bc453b;
+}
+
+.card-1-styled {
+    grid-area: card1;
+    background-color: #bc453b;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.card-2-styled {
+    grid-area: card2;
+    background-color: #bc453b;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.card-3-styled {
+    grid-area: card3;
+    background-color: #bc453b;
+    border-radius: 1rem;
+    padding: 1rem;
 }
