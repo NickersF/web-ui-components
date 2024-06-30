@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root {
+    /* Base */
+    --gr-bg-color: #131313;
+    --gr-font-color-lt: #676767;
+    --gr-font-color-dk: #202020;
+
+    /* Utils */
+    --4px: 4px;
+
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: rgba(42, 150, 100, 0.5);
+    
+    --gr-header-bg: #7f7fd6;
+    --gr-main-bg: #d37846;
+    --gr-aside-bg: #bc453b;
+    --gr-footer-bg: #9e6fc8
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.5em minmax(400px, auto) minmax(200px, auto) 1.5em;
+    grid-template-rows: 96px 1fr 96px;
+    grid-template-areas:
+    "header header header header"
+    ". main aside ."
+    "footer footer footer footer";
+    background-color: var(--gr-bg-color);
+    color: var(--gr-font-color-dk);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+/*body {*/
+/*    display: grid;*/
+/*    height: 100vh;*/
+/*    grid-template-columns: 1.5em minmax(400px, auto) minmax(200px, auto) 1.5em;*/
+/*    grid-template-rows: 96px auto auto auto auto 96px;*/
+/*    grid-template-areas:*/
+/*    "header header header header"*/
+/*    ". main aside ."*/
+/*    ". main aside ."*/
+/*    ". main aside ."*/
+/*    ". main aside ."*/
+/*    "footer footer footer footer";*/
+/*}*/
+
+header { background-color: var(--gr-header-bg) }
+main { background-color: var(--gr-main-bg) }
+aside { background-color: var(--gr-aside-bg) }
+footer { background-color: var(--gr-footer-bg) }
+
+header { grid-area: header }
+main { grid-area: main }
+aside { grid-area: aside }
+footer { grid-area: footer}
+
+/*body {*/
+/*    display: grid;*/
+/*    height: 100vh;*/
+/*    grid-template-columns: [first-col] 25% [second-col] 25% [third-col] 25% [fourth-col] 25%;*/
+/*    grid-template-rows: [first-row] 25% [second-row] 25% [third-row] 25% [fourth-row] 25%;*/
+/*    background-color: var(--bg-color);*/
+/*}*/
+
+/*.gr-item-1 {*/
+/*    grid-column-start: 1;*/
+/*    grid-column-end: 3;*/
+/*    grid-row-start: 1;*/
+/*    grid-row-end: 2;*/
+/*    background-color: var(--btn-focus-ring);*/
+/*    border-radius: 16px;*/
+/*}*/
+
+/*.gr-item-2 {*/
+/*    grid-column-start: 3;*/
+/*    grid-column-end: 4;*/
+/*    grid-row-start: 3;*/
+/*    grid-row-end: 4;*/
+/*    background-color: var(--btn-focus-ring);*/
+/*    border-radius: 16px;*/
+/*}*/

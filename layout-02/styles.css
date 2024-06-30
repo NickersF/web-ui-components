@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    /* Base */
+    --bg-color: #131313;
+    --bg-card: #222222;
+    --brd-card: #363636;
+    --font-color: #777777;
+    --card-header: #7f7fd6;
+    --card-subheading: #5555b1;
+    
+    --btn-bg-base-down: #1a1a1a;
+    --btn-bg-over: #282828;
+    --btn-bg-down: #222222;
+    --btn-text: #676767;
+    --btn-text-over: #777777;
+    --btn-text-down: #5b5b5b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-1 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 8rem;
+    grid-template-areas:
+        ". . ."
+        "card1 card2 card3"
+        "card1 card2 card3"
+        ". . .";
+    background-color: aliceblue;
+    padding: 12rem 8rem;
+}
+
+/* With centered cards */
+.container-2 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 8rem;
+    grid-template-areas:
+        ". . ."
+        "cardA cardB cardC"
+        "cardA cardB cardC"
+        ". . .";
+    background-color: var(--bg-color);
+    padding: 0 8rem 0 8rem;
+}
+
+@media only screen and (max-width: 680px) {
+    .container-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 1rem;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3";
+        padding: 1rem;
+    }
+
+    .container-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 1rem;
+        grid-template-areas:
+            "cardA"
+            "cardC"
+            "cardB";
+        padding: 1rem;
+    }
+}
+
+.card-1 {
+    display: grid;
+    place-items: center;
+    grid-area: card1;
+    background-color: #bc453b;
+}
+
+.card-2 {
+    display: grid;
+    place-items: center;
+    grid-area: card2;
+    background-color: #bc453b;
+}
+
+.card-3 {
+    display: grid;
+    place-items: center;
+    grid-area: card3;
+    background-color: #bc453b;
+}
+
+.card {
+    background-color: var(--bg-card);
+    color: var(--font-color);
+    border: 1px solid var(--brd-card);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.card-a {
+    grid-area: cardA;
+}
+
+.card-b {
+    grid-area: cardB;
+}
+
+.card-c {
+    grid-area: cardC;
+}
+
+.icon-lg {
+    font-size: 4rem;
+}
+
+.card-heading {
+    font-weight: 800;
+    color: var(--card-header);
+}
+
+.card-subheading {
+    font-weight: 600;
+    color: var(--card-subheading);
+}
+
+.card-body {
+    margin-top: 1rem;
+}
