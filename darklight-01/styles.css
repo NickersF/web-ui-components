@@ -1,4 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "../layout-02/styles.css";
+
+/* The mode switch */
+/* Light colors */
+body {
+    --text-color: #222;
+    --bkg-color: #FAFAFA;
+}
+
+/* Dark colors */
+body.dark-theme {
+    --text-color: #EEE;
+    --bkg-color: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --text-color: #EEE;
+        --bkg-color: #121212;
+    }
+
+    body.light-theme {
+        --text-color: #222;
+        --bkg-color: #FAFAFA;
+    }
+}
 
 * {
     margin: 0;
@@ -16,10 +42,17 @@ body {
         ". main-content-area ."
         ". form-content-area .";
     font-family: 'Open Sans', sans-serif;
+    background-color: var(--bkg-color);
+    color: var(--text-color);
 }
 
 .header-area {
     grid-area: header-area;
+    padding: 1rem;
+}
+
+.icon-md {
+    font-size: 2rem;
 }
 
 .main-content-area {
