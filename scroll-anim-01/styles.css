@@ -9,3 +9,20 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
+.section1 {
+    height: 100vh;
+    background-color: #9e6fc8;
+}
+
+.section2 {
+    height: 100vh;
+    background-color: #d37846;
+}
+
+.int-target-s2 {
+    width: 128px;
+    height: 96px;
+    background-color: #bc453b;
+    color: #FAFAFA;
+}
