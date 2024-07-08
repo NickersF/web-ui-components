@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #282828;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #9e6fc8;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #d37846;
+}
+
+.int-target-s2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    width: 256px;
+    height: 96px;
+    background-color: #bc453b;
+    color: #FAFAFA;
+}
+
+.int-target-s2-anim {
+    animation: opacity-anim 1200ms ease-out forwards;
+}
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    background-color: #9894e4;
+}
+
+.int-target-s3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 256px;
+    height: 96px;
+    background-color: #bc453b;
+    color: #FAFAFA;
+    transition: all 1000ms ease-out;
+}
+
+.int-target-s3-anim {
+    transform-origin: center;
+    transform: translateX(calc(50vw - 128px));
+}
+
+@keyframes opacity-anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
