@@ -35,6 +35,7 @@ navLinks.forEach((navLink) => {
     });
 });
 
+// This handles changing the section styles as you scroll. Using a 0.5 threshold for the intersection seems to feel ok.
 let sectionIntersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
