@@ -13,6 +13,9 @@ body {
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
@@ -44,11 +47,11 @@ body {
 
 .navbar.scrolled {
     background-color: rgba(51, 51, 51, 1);
-    color: rgba(255, 255, 255, 1);
+    color: rgba(249, 246, 238, 1);
 }
 
 .navbar a.scrolled {
-    color: rgba(255, 255, 255, 1);
+    color: rgba(249, 246, 238, 1);
 }
 
 .navbar a.scrolled:hover {
@@ -57,6 +60,35 @@ body {
 
 .navbar a.active {
     background-color: rgb(74, 74, 74);
+}
+
+.logo-container {
+    display: flex;
+    padding-left: 1rem;
+}
+
+.logo-container svg.logo-un-scrolled {
+    width: 66%;
+    height: auto;
+    fill: rgba(51, 51, 51, 1);
+    stroke: rgba(51, 51, 51, 1);
+    transition: all 0.25s ease;
+}
+
+.logo-container svg.logo-scrolled {
+    width: 66%;
+    height: auto;
+    fill: rgba(249, 246, 238, 1);
+    stroke: rgba(249, 246, 238, 1);
+    transition: all 0.75s ease;
+}
+
+.dark-light-container {
+    display: flex;
+}
+
+.icon-md {
+    font-size: 2rem;
 }
 
 section {

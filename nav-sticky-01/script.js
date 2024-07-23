@@ -4,15 +4,18 @@ let navLinks = document.querySelectorAll(".navbar a");
 // This scroll event changes the navbar style depending on whether it's at the top of the document or not
 window.addEventListener("scroll", function() {
     let navbar = document.querySelector(".navbar");
+    let logoEl = document.querySelector(".logo-un-scrolled");
 
     if (window.scrollY > 0) {
         navbar.classList.add("scrolled");
+        logoEl.classList.add("logo-scrolled");
         navLinks.forEach(navLink => {
             navLink.classList.add("scrolled");
             navLink.classList.remove("un-scrolled");
         });
     } else {
         navbar.classList.remove("scrolled");
+        logoEl.classList.remove("logo-scrolled")
         navLinks.forEach(navLink => {
             navLink.classList.remove("scrolled");
             navLink.classList.add("un-scrolled");
