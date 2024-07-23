@@ -83,12 +83,25 @@ body {
     transition: all 0.75s ease;
 }
 
-.dark-light-container {
+.color-mode-btn-container {
     display: flex;
+    padding-right: 1rem;
 }
 
-.icon-md {
-    font-size: 2rem;
+.color-mode-btn-container button {
+    background-color: rgba(74, 74, 74, 0.25);
+    border: 1px solid rgba(74, 74, 74, 0.50);
+    border-radius: 4px;
+}
+
+.icon-rg {
+    font-size: 1.5rem;
+    color: rgba(51, 51, 51, 1);
+    transition: all 0.25s ease;
+}
+
+.icon-rg.scrolled {
+    color: rgba(249, 246, 238, 1);
 }
 
 section {

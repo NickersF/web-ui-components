@@ -5,17 +5,22 @@ let navLinks = document.querySelectorAll(".navbar a");
 window.addEventListener("scroll", function() {
     let navbar = document.querySelector(".navbar");
     let logoEl = document.querySelector(".logo-un-scrolled");
-
+    let darkLightIconEl = document.querySelector(".icon-rg");
+    
     if (window.scrollY > 0) {
         navbar.classList.add("scrolled");
         logoEl.classList.add("logo-scrolled");
+        darkLightIconEl.classList.add("scrolled");
+        
         navLinks.forEach(navLink => {
             navLink.classList.add("scrolled");
             navLink.classList.remove("un-scrolled");
         });
     } else {
         navbar.classList.remove("scrolled");
-        logoEl.classList.remove("logo-scrolled")
+        logoEl.classList.remove("logo-scrolled");
+        darkLightIconEl.classList.remove("scrolled");
+        
         navLinks.forEach(navLink => {
             navLink.classList.remove("scrolled");
             navLink.classList.add("un-scrolled");
