@@ -7,18 +7,6 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: #282828;
-}
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     color: rgba(51, 51, 51, 1);
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth;
@@ -76,11 +64,12 @@ body {
 
 .logo-container {
     display: flex;
+    width: 25%;
     padding-left: 1rem;
 }
 
 .logo-container svg.logo-un-scrolled {
-    width: 66%;
+    width: 160px;
     height: auto;
     fill: rgba(51, 51, 51, 1);
     stroke: rgba(51, 51, 51, 1);
@@ -88,15 +77,22 @@ body {
 }
 
 .logo-container svg.logo-scrolled {
-    width: 66%;
+    width: 160px;
     height: auto;
     fill: rgba(249, 246, 238, 1);
     stroke: rgba(249, 246, 238, 1);
     transition: all 0.75s ease;
 }
 
+.mobileNav_btn {
+    display: none;
+    margin-right: .5rem;
+}
+
 .color-mode-btn-container {
     display: flex;
+    justify-content: end;
+    width: 25%;
     padding-right: 1rem;
 }
 
@@ -104,6 +100,7 @@ body {
     background-color: rgba(74, 74, 74, 0.25);
     border: 1px solid rgba(74, 74, 74, 0.50);
     border-radius: 4px;
+    width: 32px;
 }
 
 .icon-rg {
@@ -114,6 +111,30 @@ body {
 
 .icon-rg.scrolled {
     color: rgba(249, 246, 238, 1);
+}
+
+@media only screen and (max-width: 680px) {
+    .mobileNav_btn {
+        display: initial;
+        margin-right: .5rem;
+    }
+    
+    .toggleColorMode_btn {
+        display: none;
+    }
+    
+    .navbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .logo-container {
+        width: 50%;
+    }
+    
+    .navbar ul {
+        display: none;
+    }
 }
 
 section {
