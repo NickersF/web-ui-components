@@ -84,23 +84,37 @@ body {
     transition: all 0.75s ease;
 }
 
-.mobileNav_btn {
-    display: none;
-    margin-right: .5rem;
-}
-
-.color-mode-btn-container {
+.nav-btns-container {
     display: flex;
     justify-content: end;
     width: 25%;
     padding-right: 1rem;
 }
 
-.color-mode-btn-container button {
+.nav-btns-container button {
     background-color: rgba(74, 74, 74, 0.25);
     border: 1px solid rgba(74, 74, 74, 0.50);
     border-radius: 4px;
     width: 32px;
+    transition: all 150ms ease-in-out;
+}
+
+.nav-btns-container button:hover {
+    background-color: rgba(74, 74, 74, 0.45);
+    border: 1px solid rgba(74, 74, 74, 0.75);
+    border-radius: 4px;
+    width: 32px;
+}
+
+.nav-btns-container button:active {
+    background-color: rgba(74, 74, 74, 1);
+    border: 1px solid rgba(74, 74, 74, 0.75);
+    border-radius: 4px;
+    width: 32px;
+}
+
+.nav-btns-container button:active i {
+    color: rgb(213, 213, 213) !important;
 }
 
 .icon-rg {
@@ -111,6 +125,15 @@ body {
 
 .icon-rg.scrolled {
     color: rgba(249, 246, 238, 1);
+}
+
+.mobileNav_btn {
+    display: none;
+    margin-right: .5rem;
+}
+
+.nav-responsive-panel {
+    display: none;
 }
 
 @media only screen and (max-width: 680px) {

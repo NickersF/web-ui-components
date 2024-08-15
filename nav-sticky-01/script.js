@@ -70,3 +70,13 @@ let sectionIntersectionObserver = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
     sectionIntersectionObserver.observe(section);
 });
+
+// Responsive nav button events
+let mobileNavBtnEl = document.querySelector(".mobileNav_btn");
+
+mobileNavBtnEl.addEventListener("click", function () {
+    let responsivePanelEl = document.querySelector(".nav-responsive-panel");
+    
+    responsivePanelEl.style.display = "block";
+    responsivePanelEl.style.position = "absolute";
+});
