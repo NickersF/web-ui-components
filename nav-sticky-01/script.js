@@ -4,11 +4,13 @@ let navLinks = document.querySelectorAll(".navbar a");
 // This scroll event changes the navbar style depending on whether it's at the top of the document or not
 window.addEventListener("scroll", function() {
     let navbar = document.querySelector(".navbar");
+    let navbarResponsive = document.querySelector(".nav-responsive");
     let logoEl = document.querySelector(".logo-un-scrolled");
     let navIconEls = document.querySelectorAll(".icon-rg");
     
     if (window.scrollY > 0) {
         navbar.classList.add("scrolled");
+        navbarResponsive.classList.add("scrolled");
         logoEl.classList.add("logo-scrolled");
         
         navLinks.forEach(navLink => {
@@ -21,6 +23,7 @@ window.addEventListener("scroll", function() {
         });
     } else {
         navbar.classList.remove("scrolled");
+        navbarResponsive.classList.remove("scrolled");
         logoEl.classList.remove("logo-scrolled");
         
         navLinks.forEach(navLink => {
@@ -71,12 +74,25 @@ sections.forEach((section) => {
     sectionIntersectionObserver.observe(section);
 });
 
-// Responsive nav button events
+
 let mobileNavBtnEl = document.querySelector(".mobileNav_btn");
 
+// Open/close the responsive nav.
 mobileNavBtnEl.addEventListener("click", function () {
-    let responsivePanelEl = document.querySelector(".nav-responsive-panel");
+    let responsivePanelEl = document.querySelector(".nav-responsive");
     
-    responsivePanelEl.style.display = "block";
-    responsivePanelEl.style.position = "absolute";
+    if (!responsivePanelEl.classList.contains("nav-responsive-open")) {
+       responsivePanelEl.classList.add("nav-responsive-open"); 
+    } else {
+        responsivePanelEl.classList.remove("nav-responsive-open");
+    }
+});
+
+// Closes the responsive nav when the viewport is greater than the responsive breakpoint.
+window.addEventListener("resize", function (e) {
+    let responsivePanelEl = document.querySelector(".nav-responsive");
+    
+    if (window.innerWidth > 680) {
+        responsivePanelEl.classList.remove("nav-responsive-open");
+    }
 });

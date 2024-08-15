@@ -64,7 +64,7 @@ body {
 
 .logo-container {
     display: flex;
-    width: 25%;
+    /*width: 25%;*/
     padding-left: 1rem;
 }
 
@@ -132,8 +132,29 @@ body {
     margin-right: .5rem;
 }
 
-.nav-responsive-panel {
+.nav-responsive {
     display: none;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    top: 42px;
+    right: 0;
+    transition: background-color 0.25s ease;
+}
+
+.nav-responsive.scrolled {
+    background-color: rgba(51, 51, 51, 1);
+    color: rgba(249, 246, 238, 1);
+}
+
+.nav-responsive-open {
+    display: block;
+    position: fixed;
+}
+
+.nav-responsive ul {
+    list-style: none;
 }
 
 @media only screen and (max-width: 680px) {
@@ -146,16 +167,11 @@ body {
         display: none;
     }
     
-    .navbar {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
     .logo-container {
-        width: 50%;
+        height: 42px;
     }
     
-    .navbar ul {
+    .navbar ul.desktop-nav-links {
         display: none;
     }
 }
