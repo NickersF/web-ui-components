@@ -25,6 +25,11 @@ body {
     transition: all 0.3s ease;
 }
 
+.navbar.scrolled {
+    background-color: rgba(51, 51, 51, 1);
+    color: rgba(249, 246, 238, 1);
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
@@ -43,11 +48,6 @@ body {
 
 .navbar a.un-scrolled:hover {
     background-color: rgba(51, 51, 51, 0.25);
-}
-
-.navbar.scrolled {
-    background-color: rgba(51, 51, 51, 1);
-    color: rgba(249, 246, 238, 1);
 }
 
 .navbar a.scrolled {
@@ -129,38 +129,61 @@ body {
 
 .mobileNav_btn {
     display: none;
-    margin-right: .5rem;
 }
 
-.nav-responsive {
+.navbar-responsive {
     display: none;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-right: 2rem;
-    padding-bottom: 1rem;
     top: 42px;
     right: 0;
     transition: background-color 0.25s ease;
 }
 
-.nav-responsive.scrolled {
-    background-color: rgba(51, 51, 51, 1);
-    color: rgba(249, 246, 238, 1);
-}
-
-.nav-responsive-open {
+.navbar-responsive-open {
     display: block;
     position: fixed;
 }
 
-.nav-responsive ul {
+.navbar-responsive.scrolled {
+    background-color: rgba(51, 51, 51, 1);
+    color: rgba(249, 246, 238, 1);
+}
+
+.navbar-responsive ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-responsive a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.25s ease;
+    padding-left: .5rem;
+    padding-top: .25rem;
+    padding-right: 2rem;
+    padding-bottom: .25rem;
+}
+
+.navbar-responsive a.un-scrolled:hover {
+    background-color: rgba(51, 51, 51, 0.25);
+}
+
+.navbar-responsive a.scrolled {
+    color: rgba(249, 246, 238, 1);
+}
+
+.navbar-responsive a.scrolled:hover {
+    background-color: rgba(69, 69, 69, 1);
+}
+
+.navbar-responsive a.active {
+    background-color: rgb(74, 74, 74);
 }
 
 @media only screen and (max-width: 680px) {
     .mobileNav_btn {
         display: initial;
-        margin-right: .5rem;
     }
     
     .toggleColorMode_btn {
