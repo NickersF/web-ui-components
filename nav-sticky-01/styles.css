@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: rgba(51, 51, 51, 1);
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(51, 51, 51, 0);
+    color: rgba(51, 51, 51, 1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(51, 51, 51, 1);
+    color: rgba(249, 246, 238, 1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.25s ease;
+}
+
+.navbar a.un-scrolled:hover {
+    background-color: rgba(51, 51, 51, 0.25);
+}
+
+.navbar a.scrolled {
+    color: rgba(249, 246, 238, 1);
+}
+
+.navbar a.scrolled:hover {
+    background-color: rgba(69, 69, 69, 1);
+}
+
+.navbar a.active {
+    background-color: rgb(74, 74, 74);
+}
+
+.logo-container {
+    display: flex;
+    /*width: 25%;*/
+    padding-left: 1rem;
+}
+
+.logo-container svg.logo-un-scrolled {
+    width: 160px;
+    height: auto;
+    fill: rgba(51, 51, 51, 1);
+    stroke: rgba(51, 51, 51, 1);
+    transition: all 0.25s ease;
+}
+
+.logo-container svg.logo-scrolled {
+    width: 160px;
+    height: auto;
+    fill: rgba(249, 246, 238, 1);
+    stroke: rgba(249, 246, 238, 1);
+    transition: all 0.75s ease;
+}
+
+.nav-btns-container {
+    display: flex;
+    justify-content: end;
+    width: 25%;
+    padding-right: 1rem;
+}
+
+.nav-btns-container button {
+    background-color: rgba(74, 74, 74, 0.25);
+    border: 1px solid rgba(74, 74, 74, 0.50);
+    border-radius: 4px;
+    width: 32px;
+    transition: all 150ms ease-in-out;
+}
+
+.nav-btns-container button:hover {
+    background-color: rgba(74, 74, 74, 0.45);
+    border: 1px solid rgba(74, 74, 74, 0.75);
+    border-radius: 4px;
+    width: 32px;
+}
+
+.nav-btns-container button:active {
+    background-color: rgba(74, 74, 74, 1);
+    border: 1px solid rgba(74, 74, 74, 0.75);
+    border-radius: 4px;
+    width: 32px;
+}
+
+.nav-btns-container button:active i {
+    color: rgb(213, 213, 213) !important;
+}
+
+.icon-rg {
+    font-size: 1.5rem;
+    color: rgba(51, 51, 51, 1);
+    transition: all 0.25s ease;
+}
+
+.icon-rg.scrolled {
+    color: rgba(249, 246, 238, 1);
+}
+
+.mobileNav_btn {
+    display: none;
+}
+
+.navbar-responsive {
+    display: none;
+    top: 42px;
+    right: 0;
+    transition: background-color 0.25s ease;
+}
+
+.navbar-responsive-open {
+    display: block;
+    position: fixed;
+}
+
+.navbar-responsive.scrolled {
+    background-color: rgba(51, 51, 51, 1);
+    color: rgba(249, 246, 238, 1);
+}
+
+.navbar-responsive ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-responsive a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.25s ease;
+    padding-left: .5rem;
+    padding-top: .25rem;
+    padding-right: 2rem;
+    padding-bottom: .25rem;
+}
+
+.navbar-responsive a.un-scrolled:hover {
+    background-color: rgba(51, 51, 51, 0.25);
+}
+
+.navbar-responsive a.scrolled {
+    color: rgba(249, 246, 238, 1);
+}
+
+.navbar-responsive a.scrolled:hover {
+    background-color: rgba(69, 69, 69, 1);
+}
+
+.navbar-responsive a.active {
+    background-color: rgb(74, 74, 74);
+}
+
+@media only screen and (max-width: 680px) {
+    .mobileNav_btn {
+        display: initial;
+    }
+    
+    .toggleColorMode_btn {
+        display: none;
+    }
+    
+    .logo-container {
+        height: 42px;
+    }
+    
+    .navbar ul.desktop-nav-links {
+        display: none;
+    }
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#section1 {
+    background-color: #f4a261;
+}
+
+#section2 {
+    background-color: #2a9d8f;
+}
+
+#section3 {
+    background-color: #e76f51;
+}

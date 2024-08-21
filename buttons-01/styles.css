@@ -19,7 +19,7 @@
     
     /* Borders */
     --btn-border: #333333;
-    --btn-focus-ring: rgba(42, 150, 100, 0.5);
+    --btn-focus-ring: rgba(58, 186, 127, 0.75);
 }
 
 * {
@@ -103,6 +103,6 @@ button.solid:active {
 }
 
 button.base:focus, button.solid:focus, button.outline:focus {
-    outline: none;
-    /*outline: var(--btn-focus-ring) solid 1px;*/
+    /*outline: none;*/
+    outline: var(--btn-focus-ring) solid 1px;
 }
