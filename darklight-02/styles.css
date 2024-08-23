@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --bg-color: #e8e8e8;
+    --color: #3c3c3c;
+    --accent-color: #276c40;
+}
+
+:root.dark-mode {
+    --bg-color: #3c3c3d;
+    --color: #e8e8e8;
+    --accent-color: #51d681;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+.test-accent {
+    color: var(--accent-color);
+}
