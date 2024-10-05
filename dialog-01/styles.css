@@ -7,9 +7,15 @@
 body {
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
+    margin: 0;
 }
 
 #dialogExample {
     width: 15%;
     height: 15%;
+}
+
+#modalExample::backdrop {
+    background-color: palegreen;
+    opacity: 0.75;
 }
