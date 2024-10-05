@@ -4,3 +4,11 @@ body {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
+
+.margin-detail-content {
+    margin-left: 1rem;
+}
+
+.margin-l2 {
+    margin-left: 1rem;
+}
