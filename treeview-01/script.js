@@ -61,7 +61,7 @@ function renderTreeView(treeviewId, treeviewData) {
     treeviewContainer.append(rootNode);
 
 // Fill out the treeview with the data
-    treeviewData.forEach(Node => buildTree(Node, rootNode));
+    treeviewData.forEach(node => buildTree(node, rootNode));
 }
 
 renderTreeView("myTreeview", treeviewData);
