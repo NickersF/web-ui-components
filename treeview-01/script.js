@@ -31,26 +31,37 @@ let treeviewData = [
 
 console.log(treeviewData);
 
-let treeviewContainer = document.getElementById("treeview");
-let rootNode = document.createElement("ul");
-rootNode.setAttribute("id", "rootNode");
-
-treeviewContainer.append(rootNode);
-
-treeviewData.forEach((node) => {
-    let currentNode = document.createElement("li");
-    currentNode.textContent = node.name;
+// Recursively builds an unordered list from the tree data structure
+function buildTree(node, rootNode) {
+    let parentNode = document.createElement("li");
+    parentNode.textContent = node.name;
     
-    rootNode.append(currentNode);
+    rootNode.appendChild(parentNode);
     
-    if (node.children) {
-        let currentChildRoot = document.createElement("ul");
+    if (node.children && node.children.length > 0) {
+        let childRootNode = document.createElement("ul");
         
-        node.children.forEach((childNode) => {
-            currentNode.append(currentChildRoot);
-            let currentChildNode = document.createElement("li");
-            currentChildNode.textContent = childNode.name;
-            currentChildRoot.append(currentChildNode);
+        node.children.forEach(childNode => {
+            buildTree(childNode, childRootNode);
         });
-    } 
-});
+        
+        parentNode.appendChild(childRootNode);
+    }
+}
+
+// The data structure needs CRUD
+
+// The main loop to render the treeview
+function renderTreeView(treeviewId, treeviewData) {
+    // Build up the container and root node
+    let treeviewContainer = document.getElementById(`${treeviewId}`);
+    let rootNode = document.createElement("ul");
+
+    rootNode.setAttribute("id", `${treeviewId}_rootNode`);
+    treeviewContainer.append(rootNode);
+
+// Fill out the treeview with the data
+    treeviewData.forEach(Node => buildTree(Node, rootNode));
+}
+
+renderTreeView("myTreeview", treeviewData);
