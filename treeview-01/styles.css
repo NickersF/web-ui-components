@@ -3,3 +3,46 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
+/* Testing background stuff */
+.sizer-7 {
+    width: 7px;
+    height: 7px;
+    background-color: #5b5b5b;
+}
+
+.sizer-16 {
+    width: 16px;
+    height: 16px;
+    background-color: #CCCCCC;
+}
+
+.bg-node-open,
+.bg-node-through,
+.bg-node-no-child,
+.bg-node-end {
+    width: 20px;
+    height: 10px;
+    background-repeat: no-repeat;
+}
+
+.bg-node-open {
+    background-image: url("bg_opn_node_10.svg");
+    background-position: left center;
+    background-position-x: 1px;
+}
+
+.bg-node-through {
+    background-image: url("bg_thr_node_10.svg");
+    background-position: right center;
+}
+
+.bg-node-no-child {
+    background-image: url("bg_sng_node_10.svg");
+    background-position: right center;
+}
+
+.bg-node-end {
+    background-image: url("bg_end_node_10.svg");
+    background-position: right center;
+}
