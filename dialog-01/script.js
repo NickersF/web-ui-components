@@ -21,3 +21,30 @@ openModalBtn.addEventListener("click", function () {
 closeModalBtn.addEventListener("click", function () {
     modalExample.close();
 });
+
+let openFormModalBtn = document.getElementById("openFormModal_btn");
+let modalFormExample = document.getElementById("modalFormExample");
+let submitBtn = document.getElementById("submitBtn");
+let outputEl = document.querySelector("output");
+let usernameInput = document.getElementById("usernameInput");
+let passwordInput = document.getElementById("passwordInput");
+let modalForm = document.getElementById("modalForm");
+
+openFormModalBtn.addEventListener("click", function () {
+    modalFormExample.showModal();
+});
+
+modalFormExample.addEventListener("close", function (e) {
+    console.log(e);
+
+    outputEl.value = modalFormExample.returnValue === "default" ? "No return value." : `Return value: ${modalFormExample.returnValue}`;
+});
+
+submitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    
+    let formValues = usernameInput.value + passwordInput.value; // Good, you can combine the form values and send them through.
+    
+    modalFormExample.close(formValues);
+});
+
