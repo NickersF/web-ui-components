@@ -66,3 +66,30 @@ function renderTreeView(treeviewId, treeviewData) {
 }
 
 renderTreeView("myTreeview", treeviewData);
+
+
+let node1Expander = document.getElementById("node1_expander");
+
+node1Expander.addEventListener("click", function () {
+    let nodeExpanderIcon = document.getElementById("node1_expand_icon");
+    let nodeLineConnector = document.getElementById("node1_line_connector");
+    let nodeContent = document.getElementById("node1_content");
+
+    // Toggle the icon classes independently
+    if (nodeExpanderIcon.classList.contains("bi-plus-square")) {
+        nodeExpanderIcon.classList.remove("bi-plus-square");
+        nodeExpanderIcon.classList.add("bi-dash-square");
+    } else {
+        nodeExpanderIcon.classList.remove("bi-dash-square");
+        nodeExpanderIcon.classList.add("bi-plus-square");
+    }
+
+    // Toggle the background classes independently
+    if (nodeLineConnector.classList.contains("bg-node-open")) {
+        nodeLineConnector.classList.remove("bg-node-open");
+        nodeLineConnector.classList.add("bg-node-beg");
+    } else {
+        nodeLineConnector.classList.remove("bg-node-beg");
+        nodeLineConnector.classList.add("bg-node-open");
+    }
+});

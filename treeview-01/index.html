@@ -24,10 +24,30 @@
 </div>
 
 <h2>Node line as sprites</h2>
+
+<div class="bg-node-beg"></div>
 <div class="bg-node-open"></div>
 <div class="bg-node-no-child"></div>
 <div class="bg-node-through"></div>
 <div class="bg-node-end"></div>
+
+<h2>Base template</h2>
+
+<div class="tv-node-container">
+    <div class="bg-node-beg">
+        <div id="node1_expander" class="bg-base tv-node-expander">
+            
+            <i id="node1_expand_icon" class="bi bi-plus-square"></i>
+        </div>
+    </div>
+    <div id="node1_line_connector" class="bg-node-beg"></div>
+    <div id="node1_content" class="tv-node-content"><div><i class="bi bi-gear tv-pr-4"></i></div>Node 1</div>
+</div>
+
+<div class="tv-node-container tv-ml-20">
+    <div id="node2_line_connector" class="bg-node-no-child"></div>
+    <div id="node2_content" class="tv-node-content"><i class="bi bi-gear tv-pr-4"></i>Node 2</div>
+</div>
 
 <script src="script.js"></script>
 </body>

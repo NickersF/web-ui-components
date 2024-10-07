@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -17,13 +18,70 @@ body {
     background-color: #CCCCCC;
 }
 
+.tv-node-container {
+    display: flex;
+}
+
+.tv-node-expander {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tv-node-content {
+    display: flex;
+}
+
+.tv-node-connector-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tv-ml-neg-15 {
+    margin-left: -15px;
+}
+
+.tv-ml-5 {
+    margin-left: 10px
+}
+
+.tv-ml-12 {
+    margin-left: 12px;
+}
+
+.tv-ml-20 {
+    margin-left: 20px;
+}
+
+.tv-pr-4 {
+    padding-right: 4px;
+}
+
+.bg-base {
+    background-color: #FFF;
+}
+
+.bg-node-beg {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+
 .bg-node-open,
 .bg-node-through,
 .bg-node-no-child,
 .bg-node-end {
-    width: 20px;
-    height: 10px;
+    width: 40px;
+    height: 20px;
     background-repeat: no-repeat;
+}
+
+.bg-node-beg {
+    background-image: url("bg_beg_node_10.svg");
+    background-position: left center;
+    background-position-x: 1px;
+    
 }
 
 .bg-node-open {
@@ -35,14 +93,17 @@ body {
 .bg-node-through {
     background-image: url("bg_thr_node_10.svg");
     background-position: right center;
+    background-position-x: 19px;
 }
 
 .bg-node-no-child {
     background-image: url("bg_sng_node_10.svg");
     background-position: right center;
+    background-position-x: 19px;
 }
 
 .bg-node-end {
     background-image: url("bg_end_node_10.svg");
     background-position: right center;
+    background-position-x: 19px;
 }
