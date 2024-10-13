@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+html {
+    height: 100%;
+}
 body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #252525;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
@@ -15,4 +24,61 @@ body {
 
 .accordion-container {
     width: 396px;
+}
+
+h2 {
+    color: #bab7b6;
+}
+
+details {
+    background-color: #424242;
+    color: #d5d1d0;
+    border-radius: 0.5rem;
+}
+
+details[open] {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+details[open] .chevron-icon {
+    transform: rotate(90deg) translateZ(0); /* Force any z-axis transforms to 0 */
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+    transform-origin: center; /* Ensures smooth rotation around the center */
+    backface-visibility: hidden; /* Backface cull the icon to reduce jitter */
+}
+
+summary {
+    background-color: #ae3c3e;
+    color: #f3f3f3;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.50rem;
+}
+
+summary span {
+    margin-left: 0.5rem;
+}
+
+.details-content {
+    padding: 0.5rem;
+}
+
+details:first-of-type summary {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+details:last-of-type summary {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+details:last-of-type[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
