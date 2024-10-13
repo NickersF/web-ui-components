@@ -15,21 +15,73 @@
 
 <body>
 
-<details>
-    <summary>Important details item</summary>
-    <p>Some detail</p>
-</details>
-
-<h2>Nested details</h2>
-
-<details>
-    <summary>First level details</summary>
-    <p class="margin-detail-content">First level detail</p>
-    <details class="margin-l2">
-        <summary>Second level details</summary>
-        <p class="margin-detail-content">Second level detail</p>
+<h3>Accordion</h3>
+<div class="accordion-container">
+    <details>
+        <summary>Security</summary>
+        <p>Settings form here</p>
     </details>
-</details>
+    <details>
+        <summary>Interface</summary>
+        <p>Settings form here</p>
+    </details>
+    <details>
+        <summary>Account</summary>
+        <p>Settings form here</p>
+    </details>
+</div>
+
+<h3>Exclusive accordion</h3>
+<div class="accordion-container">
+    <details name="app-settings">
+        <summary>Security</summary>
+        <p>Settings form here</p>
+    </details>
+    <details name="app-settings">
+        <summary>Interface</summary>
+        <p>Settings form here</p>
+    </details>
+    <details name="app-settings">
+        <summary>Account</summary>
+        <p>Settings form here</p>
+    </details>
+</div>
+
+<h2>Nested accordion</h2>
+<div class="accordion-container">
+    <details>
+        <summary>First level details</summary>
+        <p class="margin-detail-content">First level detail</p>
+        <details class="margin-l2">
+            <summary>Second level details</summary>
+            <p class="margin-detail-content">Second level detail</p>
+            <details class="margin-l2">
+                <summary>Third level details</summary>
+                <p class="margin-detail-content">Third level detail</p>
+            </details>
+        </details>
+    </details>
+</div>
+
+<h2>Nested exclusive accordion</h2>
+<div class="accordion-container">
+    <details name="nested-acc">
+        <summary>First level details</summary>
+        <p class="margin-detail-content">First level detail</p>
+        <details class="margin-l2" name="nested-acc-1">
+            <summary>Second level details</summary>
+            <p class="margin-detail-content">Second level detail</p>
+            <details class="margin-l2" name="nested-acc-2">
+                <summary>Third level details</summary>
+                <p class="margin-detail-content">Third level detail</p>
+            </details>
+        </details>
+        <details class="margin-l2" name="nested-acc-1">
+            <summary>Second level details 1</summary>
+            <p class="margin-detail-content">Second level detail 1</p>
+        </details>
+    </details>
+</div>
 
 <script src="script.js"></script>
 </body>
