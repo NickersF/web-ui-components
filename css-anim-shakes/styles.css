@@ -1,11 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-/** {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    box-sizing: border-box;*/
-/*}*/
+html, body {
+    height: 100vh;
+}
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     font-family: 'Open Sans', sans-serif;
+}
+
+.shake-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fx-shake-x {
+    animation-name: shakeX;
+    animation-duration: 200ms;
+    animation-timing-function: ease;
+}
+
+@keyframes shakeX {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(4px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+    100% {
+        transform: translateX(04px);
+    }
 }
