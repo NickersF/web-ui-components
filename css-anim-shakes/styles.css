@@ -38,6 +38,6 @@ body {
         transform: translateX(-4px);
     }
     100% {
-        transform: translateX(04px);
+        transform: translateX(4px);
     }
 }
