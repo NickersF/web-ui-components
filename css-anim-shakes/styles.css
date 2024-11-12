@@ -41,3 +41,7 @@ body {
         transform: translateX(4px);
     }
 }
+
+.shake-bg {
+    background-color: red;
+}
