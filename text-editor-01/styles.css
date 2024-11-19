@@ -43,5 +43,25 @@ h1, h2, h3, h4, h5, h6 {
     Demo CSS starts here
 */
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
     font-family: 'Open Sans', sans-serif;
+}
+
+.container-1 {
+    width: 50dvw;
+}
+
+.nav-tabs {
+    background-color: #7f7fd6;
+}
+
+.nav-tab-content {
+    background-color: #e6d9f3;
+}
+
+.display-none {
+    display: none;
 }
