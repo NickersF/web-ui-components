@@ -55,11 +55,24 @@ body {
 }
 
 .nav-tabs {
+    display: flex;
     background-color: #7f7fd6;
 }
 
 .nav-tab-content {
     background-color: #e6d9f3;
+}
+
+#editTab {
+    margin: 0.5rem;
+}
+
+.textarea-edit {
+    width: 100%;
+    resize: vertical;
+    min-height: 102px;
+    padding: 0.5rem;
+    border: 0;
 }
 
 .display-none {
