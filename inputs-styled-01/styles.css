@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --bg-color: #131313;
+    --font-color: #777777;
+    --input-bg-base: #1c1c1c;
+    --input-text: #676767;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -14,12 +21,11 @@
 }
 
 body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
 }
 
 img, picture, video, canvas, svg {
@@ -29,6 +35,7 @@ img, picture, video, canvas, svg {
 
 input, button, textarea, select {
     font: inherit;
+    appearance: none;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -40,4 +47,29 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
+}
+
+.main-content-area {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+:focus-visible {
+    outline-width: 0;
+    border-radius: 0;
+}
+
+input[type="text"] {
+    border: 1px solid #767676;
+    background-color: var(--input-bg-base);
+    color: var(--input-text);
+    transition: border 200ms ease-in-out;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #ec5635;
+    color: #ec5635;
 }
