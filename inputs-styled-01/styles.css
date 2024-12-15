@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --bg-color: #131313;
+    --font-color: #777777;
+    --input-bg-base: #1c1c1c;
+    --input-bg-grad-dark: #131313;
+    --input-text: #777777;
+    --input-text-focus: #989898;
+    --input-border: #333333;
+    --input-focus-ring: rgba(58, 186, 127, 0.75);
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    appearance: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+.main-content-area {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+:focus-visible {
+    outline-width: 0;
+    border-radius: 0;
+}
+
+input[type="text"].base {
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg-base);
+    box-shadow: inset 0 0 10px var(--input-bg-grad-dark); /* Inner shadow */
+    color: var(--input-text);
+    transition: border 200ms ease-in-out, color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+input[type="text"].base:focus {
+    border: 1px solid var(--input-focus-ring);
+    color: var(--input-text-focus);
+    box-shadow: inset 0 0 5px var(--input-bg-grad-dark); /* Inner shadow */
+}
