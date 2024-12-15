@@ -15,6 +15,7 @@
     --btn-text-down: #5b5b5b;
     
     /* Utils */
+    --2px: 2px;
     --4px: 4px;
     
     /* Borders */
@@ -22,10 +23,46 @@
     --btn-focus-ring: rgba(58, 186, 127, 0.75);
 }
 
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    appearance: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
 }
 
 body {
@@ -38,13 +75,19 @@ body {
     height: 100vh;
 }
 
+/* Disable the focus outline and use border instead for a tighter feel */
+:focus-visible {
+    outline-width: 0;
+    border-radius: 0;
+}
+
 /* Button base */
 button.base {
     background-color: var(--btn-bg);
     color: var(--btn-text);
     border: 1px solid var(--btn-border);
     border-radius: var(--4px);
-    padding: var(--4px);
+    padding: var(--2px) var(--4px);
     transition: all 150ms ease-in-out;
 }
 
@@ -66,7 +109,7 @@ button.outline {
     color: var(--btn-text);
     border: 1px solid var(--btn-border);
     border-radius: var(--4px);
-    padding: var(--4px);
+    padding: var(--2px) var(--4px);
     transition: all 150ms ease-in-out;
 }
 
@@ -80,13 +123,13 @@ button.outline:active {
     color: var(--btn-text-down);
 }
 
-/* Button base */
+/* Button solid */
 button.solid {
     background-color: var(--btn-bg);
     color: var(--btn-text);
     border: 1px solid var(--btn-bg);
     border-radius: var(--4px);
-    padding: var(--4px);
+    padding: var(--2px) var(--4px);
     transition: all 150ms ease-in-out;
 }
 
@@ -102,7 +145,19 @@ button.solid:active {
     border: 1px solid var(--btn-bg-down);
 }
 
+/* Set the focus border for the button variants */
 button.base:focus, button.solid:focus, button.outline:focus {
-    /*outline: none;*/
-    outline: var(--btn-focus-ring) solid 1px;
+    border: solid 1px var(--btn-focus-ring);
+}
+
+/* Scaling modifier classes for the button variants */
+button.base.button-lg, button.outline.button-lg, button.solid.button-lg {
+    font-size: 1.25rem;
+    padding: var(--4px) var(--4px);
+}
+
+button.base.button-xl, button.outline.button-xl, button.solid.button-xl {
+    font-size: 1.5rem;
+    border-width: 2px;
+    padding: var(--4px) 1rem;
 }
