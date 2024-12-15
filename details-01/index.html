@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details Element Exploration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<h2>Accordion</h2>
+<div class="accordion-container">
+    <details>
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Account</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+    </details>
+    <details>
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Interface</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+    </details>
+    <details>
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Key Map</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+    </details>
+</div>
+
+<h2>Exclusive accordion</h2>
+<div class="accordion-container">
+    <details name="app-settings">
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Settings 1</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+    </details>
+    <details name="app-settings">
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Settings 2</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+    </details>
+    <details name="app-settings">
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Settings 3</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+    </details>
+</div>
+
+<h2>Nested accordion</h2>
+<div class="accordion-container">
+    <details>
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Level 1</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+        <details class="margin-l2">
+            <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Level 2</span> </summary>
+            <div class="details-content">
+                Settings form here
+            </div>
+            <details class="margin-l2">
+                <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Level 3</span> </summary>
+                <div class="details-content">
+                    Settings form here
+                </div>
+            </details>
+        </details>
+    </details>
+</div>
+
+<h2>Nested exclusive accordion</h2>
+<div class="accordion-container">
+    <details name="nested-acc">
+        <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Level 1</span> </summary>
+        <div class="details-content">
+            Settings form here
+        </div>
+        <details class="margin-l2" name="nested-acc-1">
+            <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Level 2</span> </summary>
+            <div class="details-content">
+                Settings form here
+            </div>
+            <details class="margin-l2" name="nested-acc-2">
+                <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Leve 3</span> </summary>
+                <div class="details-content">
+                    Settings form here
+                </div>
+            </details>
+        </details>
+        <details class="margin-l2" name="nested-acc-1">
+            <summary><i class="bi bi-chevron-right chevron-icon"></i> <span>Leve 2 - A</span> </summary>
+            <div class="details-content">
+                Settings form here
+            </div>
+        </details>
+    </details>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
