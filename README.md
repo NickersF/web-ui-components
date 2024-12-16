@@ -1,6 +1,9 @@
 # web-ui-components
  A collection of web UI components in HTML CSS and JS
 
-- buttons-01: Basic buttons with styled states
-- layout-01: Grid layout with areas
-- layout-02: Two column responsive grid layout
+## The purpose of this project
+The goal of this project is to establish a consistent basis for styling
+common HTML components and create more complex components using native
+browser technologies. The components are designed to be generic enough to
+use with common front-end frameworks. However, the focus is for these web
+components to be used as .NET Blazor UI components.
