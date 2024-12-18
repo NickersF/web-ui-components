@@ -1,7 +1,44 @@
 @import "../base-css/reset.css";
 @import "../base-css/colors.css";
+@import "../buttons-01/styles.css";
+
+:root {
+    --input-bg-base: #1c1c1c;
+    --input-bg-grad-dark: #131313;
+    --input-text: #777777;
+    --input-text-focus: #989898;
+    --input-border: #333333;
+    --input-focus-ring: rgba(58, 186, 127, 0.75);
+}
 
 body {
     background-color: var(--bg-color);
     color: var(--font-color);
+}
+
+.main-content-area {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+:focus-visible {
+    outline-width: 0;
+    border-radius: 0;
+}
+
+input[type="search"].base {
+    border: 1px solid var(--input-border);
+    border-radius: var(--4px);
+    background-color: var(--input-bg-base);
+    box-shadow: inset 0 0 10px var(--input-bg-grad-dark);
+    color: var(--input-text);
+    padding: var(--2px);
+    transition: border 200ms ease-in-out, color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+input[type="search"].base:focus {
+    border: 1px solid var(--input-focus-ring);
+    color: var(--input-text-focus);
+    box-shadow: inset 0 0 5px var(--input-bg-grad-dark);
 }
