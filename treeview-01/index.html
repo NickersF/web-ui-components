@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="myTreeview"></div>
+
+<h2>Treeview UI components</h2>
+
+<div>
+    <div class="sizer-7"></div>
+    <div class="sizer-16"></div>
+</div>
+
+<h2>Node line as sprites</h2>
+
+<div class="bg-node-beg"></div>
+<div class="bg-node-open"></div>
+<div class="bg-node-no-child"></div>
+<div class="bg-node-through"></div>
+<div class="bg-node-end"></div>
+
+<h2>Base template</h2>
+
+<div class="tv-node-container">
+    <div class="bg-node-beg">
+        <div id="node1_expander" class="bg-base tv-node-expander">
+            
+            <i id="node1_expand_icon" class="bi bi-plus-square"></i>
+        </div>
+    </div>
+    <div id="node1_line_connector" class="bg-node-beg"></div>
+    <div id="node1_content" class="tv-node-content"><div><i class="bi bi-gear tv-pr-4"></i></div>Node 1</div>
+</div>
+
+<div class="tv-node-container tv-ml-20">
+    <div id="node2_line_connector" class="bg-node-no-child"></div>
+    <div id="node2_content" class="tv-node-content"><i class="bi bi-gear tv-pr-4"></i>Node 2</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
