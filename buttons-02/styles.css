@@ -1,0 +1,31 @@
+@import "../base-css/reset.css";
+@import "../base-css/colors.css";
+
+:root {
+    --btn-bg: #202020;
+    --btn-bg-over: #282828;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+button.menu-base {
+    appearance: none;
+    background-color: var(--btn-bg);
+    color: var(--font-color);
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 4px 0 4px;
+}
+
+button.menu-base:hover {
+    background-color: var(--btn-bg-over);
+}
