@@ -76,16 +76,44 @@ body {
     height: 100vh;
 }
 
-button.menu-base {
+button.menu-button-base {
     appearance: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     background-color: var(--btn-bg);
-    color: var(--font-color);
+    color: var(--btn-text);
     width: 100%;
+    max-width: 100%;
+    height: 32px;
+    overflow: hidden;
     border: 0;
     border-radius: 4px;
     padding: 0 4px 0 4px;
+    cursor: pointer;
 }
 
-button.menu-base:hover {
+button.menu-button-base:hover {
     background-color: var(--btn-bg-over);
+    color: var(--btn-text-over);
+}
+
+button.menu-button-base:hover .bi.bi-gear {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in;
+    transform-origin: center center;
+}
+    
+.bi.bi-gear {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+}
+
+.menu-button-inner {
+    display: flex;
+}
+
+.pad-left-1 {
+    padding-left: 0.5rem;
 }
