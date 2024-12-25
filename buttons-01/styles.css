@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-    /* Base */
-    --bg-color: #131313;
-    --font-color: #676767;
-    --btn-bg-base: #1c1c1c;
-    --btn-bg-base-down: #1a1a1a;
-    --btn-bg: #202020;
-    --btn-bg-over: #282828;
-    --btn-bg-down: #222222;
+    /* These base colors are defined in the colors sheet already keeping them here to have the examples stand alone */
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+
+    --btn-bg: #181818;
+    --btn-bg-over: #1C1C1C;
+    --btn-bg-down: #141414;
     
-    --btn-text: #676767;
-    --btn-text-over: #777777;
-    --btn-text-down: #5b5b5b;
+    --btn-text: #C3C2BD;
+    --btn-text-over: #90908F;
+    --btn-text-down: #B2B1AE;
     
     /* Utils */
     --2px: 2px;
