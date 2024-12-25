@@ -13,15 +13,16 @@
     --btn-text-over: #90908F;
     --btn-text-down: #B2B1AE;
     
-    /* Utils */
-    --2px: 2px;
-    --4px: 4px;
-    
     /* Borders */
     --btn-border: #333333;
     --btn-focus-ring: rgba(58, 186, 127, 0.75);
+
+    /* Utils */
+    --2px: 2px;
+    --4px: 4px;
 }
 
+/* region CSS Reset */
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -63,6 +64,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
+/* endregion*/
 
 body {
     background-color: var(--bg-color);
