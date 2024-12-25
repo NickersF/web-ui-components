@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    /* These base colors are defined in the colors sheet already keeping them here to have the examples stand alone */
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+
+    --btn-bg: #181818;
+    --btn-bg-over: #1C1C1C;
+    --btn-bg-down: #141414;
+
+    --btn-text: #C3C2BD;
+    --btn-text-over: #90908F;
+    --btn-text-down: #B2B1AE;
+    
+    --menu-bg: #141414;
+
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: rgba(58, 186, 127, 0.75);
+
+    /* Utils */
+    --2px: 2px;
+    --4px: 4px;
+}
+
 /* region CSS Reset */
 /*
   Josh's Custom CSS Reset
@@ -43,3 +67,94 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 /* endregion */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.menu-button-wrapper {
+    position: relative;
+}
+
+button.menu-button-base {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    width: 100%;
+    max-width: 100%;
+    height: 32px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 4px 0 4px;
+    cursor: pointer;
+}
+
+button.menu-button-base:hover {
+    background-color: var(--btn-bg-over);
+    color: var(--btn-text-over);
+}
+
+button.menu-button-base:hover .ico-anim {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in;
+    transform-origin: center center;
+}
+
+.ico-anim {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+}
+
+.menu-button-inner {
+    display: flex;
+}
+
+.pad-left-1 {
+    padding-left: 0.5rem;
+}
+
+/* Menu classes */
+.button-menu-container-closed {
+    display: flex;
+    position: absolute;
+    top: 34px;
+    z-index: 9999;
+    border-radius: 4px;
+    background-color: var(--menu-bg);
+    width: 150%;
+    max-width: 150%;
+    padding: 4px;
+    visibility: hidden; /* Hides the element from the DOM visually and makes it non-interactive */
+    opacity: 0;         /* Fully transparent */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-out */
+}
+
+.button-menu-container-open {
+    display: flex;
+    position: absolute;
+    top: 34px;
+    z-index: 9999;
+    border-radius: 4px;
+    background-color: var(--menu-bg);
+    width: 150%;
+    max-width: 150%;
+    padding: 4px;
+    visibility: visible; /* Makes the element visible and interactive */
+    opacity: 1;          /* Fully opaque */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in */
+}
+
+.margin-top-1 {
+    margin-top: 0.5rem;
+}
