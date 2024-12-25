@@ -99,13 +99,13 @@ button.menu-button-base:hover {
     color: var(--btn-text-over);
 }
 
-button.menu-button-base:hover .bi.bi-gear {
+button.menu-button-base:hover .ico-anim {
     transform: scale(0.9);
     transition: transform 0.2s ease-in;
     transform-origin: center center;
 }
     
-.bi.bi-gear {
+.ico-anim {
     transition: transform 0.3s ease-in-out;
     transform-origin: center center;
 }
