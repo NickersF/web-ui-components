@@ -2,6 +2,7 @@ const menuButton1 = document.getElementById("menuButton1");
 const buttonMenu1 = document.getElementById("buttonMenu1");
 const closeMenuBtn = document.getElementById("closeMenuBtn");
 
+// Open/close the menu from the main dropdown button
 menuButton1.addEventListener("click", function () {
     let buttonMenuClassList = buttonMenu1.classList;
     
@@ -14,6 +15,7 @@ menuButton1.addEventListener("click", function () {
     }
 });
 
+// Close the menu from the close button on the menu
 closeMenuBtn.addEventListener("click", function () {
     let buttonMenuClassList = buttonMenu1.classList;
 
@@ -27,13 +29,13 @@ closeMenuBtn.addEventListener("click", function () {
 });
 
 // Close the menu if the user clicks outside of it
-document.addEventListener("click", function (event) {
-    const isClickInsideMenu = buttonMenu1.contains(event.target);
-    const isClickInsideButton = menuButton1.contains(event.target);
+document.addEventListener("click", function (e) {
+    const isClickInsideMenu = buttonMenu1.contains(e.target);
+    const isClickInsideButton = menuButton1.contains(e.target);
 
     if (!isClickInsideMenu && !isClickInsideButton) {
-        // Close the menu if it's open
         let buttonMenuClassList = buttonMenu1.classList;
+        
         if (buttonMenuClassList.contains("button-menu-container-open")) {
             buttonMenuClassList.remove("button-menu-container-open");
             buttonMenuClassList.add("button-menu-container-closed");

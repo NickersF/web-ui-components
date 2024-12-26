@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+/* region Variables */
 :root {
     /* These base colors are defined in the colors sheet already keeping them here to have the examples stand alone */
     --bg-color: #202020;
@@ -29,6 +30,19 @@
     --2px: 2px;
     --4px: 4px;
 }
+/* endregion */
+
+/* region Global styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+/* endregion */
 
 /* region CSS Reset */
 /*
@@ -74,16 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* endregion */
 
-body {
-    background-color: var(--bg-color);
-    color: var(--font-color);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    display: grid;
-    place-items: center;
-    height: 100vh;
-}
-
+/* region Menu button classes */
 .menu-button-wrapper {
     position: relative;
 }
@@ -125,16 +130,9 @@ button.menu-button-base:hover .ico-anim {
 .menu-button-inner {
     display: flex;
 }
+/* endregion */
 
-.pad-left-1 {
-    padding-left: 0.5rem;
-}
-
-.margin-top-4px {
-    margin-top: 4px;
-}
-
-/* Menu classes */
+/* region Menu classes */
 .button-menu-container-closed {
     display: grid;
     position: absolute;
@@ -234,19 +232,16 @@ button.menu-button-base:hover .ico-anim {
     padding-bottom: 4px;
 }
 
-.menu-text {
+.menu-item-text {
     padding-left: 1rem;
 }
 
 .button-menu-footer {
     padding: 1rem;
 }
+/* endregion*/
 
-.margin-top-1 {
-    margin-top: 1.5rem;
-}
-
-/* Disable the focus outline and use border instead for a tighter feel */
+/* region Base button classes */
 :focus-visible {
     outline-width: 0;
     border-radius: 0;
@@ -280,3 +275,18 @@ button.base:active {
 button.base:focus {
     border: solid 1px var(--btn-focus-ring);
 }
+/* endregion */
+
+/* region Utils */
+.pad-left-1 {
+    padding-left: 0.5rem;
+}
+
+.margin-top-4px {
+    margin-top: 4px;
+}
+
+.margin-top-1 {
+    margin-top: 1.5rem;
+}
+/* endregion */
