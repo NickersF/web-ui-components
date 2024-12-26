@@ -23,7 +23,7 @@
     
     /* Borders */
     --btn-border: #333333;
-    --btn-focus-ring: rgba(58, 186, 127, 0.75);
+    --btn-focus-ring: var(--menu-accent);
 
     /* Utils */
     --2px: 2px;
@@ -171,6 +171,7 @@ button.menu-button-base:hover .ico-anim {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr;
+    background: linear-gradient(0deg, #181818, #141414);
     color: var(--menu-header-text);
     border-bottom: 1px solid var(--menu-border);
 }
@@ -243,4 +244,39 @@ button.menu-button-base:hover .ico-anim {
 
 .margin-top-1 {
     margin-top: 1.5rem;
+}
+
+/* Disable the focus outline and use border instead for a tighter feel */
+:focus-visible {
+    outline-width: 0;
+    border-radius: 0;
+}
+
+/* Button base */
+button.base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--4px);
+    padding: var(--2px) var(--4px);
+    transition: all 150ms ease-in-out;
+}
+
+button.base:hover {
+    background-color: var(--btn-bg-over);
+    border: 1px solid var(--btn-text-over);
+    color: var(--btn-text-over);
+}
+
+button.base:active {
+    background-color: var(--btn-bg-down);
+    color: var(--btn-text-down);
+    border: 1px solid var(--btn-text-down);
+}
+
+button.base:focus {
+    border: solid 1px var(--btn-focus-ring);
 }
