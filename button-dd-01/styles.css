@@ -19,6 +19,8 @@
     --menu-shadow: #181818;
     --menu-header-text: #F6EEF9;
     
+    --menu-accent: #7f7fd6;
+    
     /* Borders */
     --btn-border: #333333;
     --btn-focus-ring: rgba(58, 186, 127, 0.75);
@@ -128,6 +130,10 @@ button.menu-button-base:hover .ico-anim {
     padding-left: 0.5rem;
 }
 
+.margin-top-4px {
+    margin-top: 4px;
+}
+
 /* Menu classes */
 .button-menu-container-closed {
     display: grid;
@@ -140,9 +146,9 @@ button.menu-button-base:hover .ico-anim {
     box-shadow: 2px 6px 8px var(--menu-shadow);
     width: 150%;
     max-width: 150%;
-    visibility: hidden; /* Hides the element from the DOM visually and makes it non-interactive */
-    opacity: 0;         /* Fully transparent */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-out */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .button-menu-container-open {
@@ -156,26 +162,79 @@ button.menu-button-base:hover .ico-anim {
     box-shadow: 2px 6px 8px var(--menu-shadow);
     width: 150%;
     max-width: 150%;
-    visibility: visible; /* Makes the element visible and interactive */
-    opacity: 1;          /* Fully opaque */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in */
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .button-menu-header {
     display: grid;
-    place-items: center;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr;
     color: var(--menu-header-text);
     border-bottom: 1px solid var(--menu-border);
+}
+
+.button-menu-header .bi-person-circle {
+    color: var(--menu-accent);
+}
+
+.button-menu-header-title {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    justify-content: center;
     padding: 1.25rem 0.5rem 1em;
 }
 
-.button-menu-header > svg {
-    color: #7f7fd6;
+.button-menu-header-icon {
+    display: grid;
+    place-items: center;
+}
+
+.button-menu-header-close-icon {
+    display: grid;
+    align-items: start;
+    justify-content: end;
+    padding: 8px;
+}
+
+.close-icon-state {
+    color: var(--btn-text);
+    transition: color 0.2s ease;
+}
+
+.close-icon-state:hover {
+    color: var(--btn-text-over);
 }
 
 .button-menu-items {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--menu-border);
-    padding: 1rem;
+}
+
+.menu-item {
+    display: flex;
+    place-items: center;
+    padding-left: 2rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: default;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.menu-item:hover {
+    background-color: var(--menu-accent);
+    color: var(--menu-bg);
+    display: flex;
+    place-items: center;
+    padding-left: 2rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.menu-text {
+    padding-left: 1rem;
 }
 
 .button-menu-footer {
