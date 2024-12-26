@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* region Variables */
+:root {
+    /* These base colors are defined in the colors sheet already keeping them here to have the examples stand alone */
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+
+    --btn-bg: #181818;
+    --btn-bg-over: #1C1C1C;
+    --btn-bg-down: #141414;
+
+    --btn-text: #C3C2BD;
+    --btn-text-over: #90908F;
+    --btn-text-down: #B2B1AE;
+    
+    /* Menu styles*/
+    --menu-bg: #141414;
+    --menu-border: #242424;
+    --menu-shadow: #181818;
+    --menu-header-text: #F6EEF9;
+    
+    --menu-accent: #7f7fd6;
+    
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: var(--menu-accent);
+
+    /* Utils */
+    --2px: 2px;
+    --4px: 4px;
+}
+/* endregion */
+
+/* region Global styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+/* endregion */
+
+/* region CSS Reset */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+/* endregion */
+
+/* region Menu button classes */
+.menu-button-wrapper {
+    position: relative;
+}
+
+button.menu-button-base {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    width: 100%;
+    max-width: 100%;
+    height: 32px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 4px 0 4px;
+    cursor: pointer;
+}
+
+button.menu-button-base:hover {
+    background-color: var(--btn-bg-over);
+    color: var(--btn-text-over);
+}
+
+button.menu-button-base:hover .ico-anim {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in;
+    transform-origin: center center;
+}
+
+.ico-anim {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+}
+
+.menu-button-inner {
+    display: flex;
+}
+/* endregion */
+
+/* region Menu classes */
+.button-menu-container-closed {
+    display: grid;
+    position: absolute;
+    top: 34px;
+    z-index: 9999;
+    border: 1px solid var(--menu-border);
+    border-radius: 4px;
+    background-color: var(--menu-bg);
+    box-shadow: 2px 6px 8px var(--menu-shadow);
+    width: 150%;
+    max-width: 150%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.button-menu-container-open {
+    display: grid;
+    position: absolute;
+    top: 34px;
+    z-index: 9999;
+    border: 1px solid var(--menu-border);
+    border-radius: 4px;
+    background-color: var(--menu-bg);
+    box-shadow: 2px 6px 8px var(--menu-shadow);
+    width: 150%;
+    max-width: 150%;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.button-menu-header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr;
+    background: linear-gradient(0deg, #181818, #141414);
+    color: var(--menu-header-text);
+    border-bottom: 1px solid var(--menu-border);
+}
+
+.button-menu-header .bi-person-circle {
+    color: var(--menu-accent);
+}
+
+.button-menu-header-title {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    justify-content: center;
+    padding: 1.25rem 0.5rem 1em;
+}
+
+.button-menu-header-icon {
+    display: grid;
+    place-items: center;
+}
+
+.button-menu-header-close-icon {
+    display: grid;
+    align-items: start;
+    justify-content: end;
+    padding: 8px;
+}
+
+.close-icon-state {
+    color: var(--btn-text);
+    transition: color 0.2s ease;
+}
+
+.close-icon-state:hover {
+    color: var(--btn-text-over);
+}
+
+.button-menu-items {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--menu-border);
+}
+
+.menu-item {
+    display: flex;
+    place-items: center;
+    padding-left: 2rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: default;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.menu-item:hover {
+    background-color: var(--menu-accent);
+    color: var(--menu-bg);
+    display: flex;
+    place-items: center;
+    padding-left: 2rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.menu-item-text {
+    padding-left: 1rem;
+}
+
+.button-menu-footer {
+    padding: 1rem;
+}
+/* endregion*/
+
+/* region Base button classes */
+:focus-visible {
+    outline-width: 0;
+    border-radius: 0;
+}
+
+/* Button base */
+button.base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--4px);
+    padding: var(--2px) var(--4px);
+    transition: all 150ms ease-in-out;
+}
+
+button.base:hover {
+    background-color: var(--btn-bg-over);
+    border: 1px solid var(--btn-text-over);
+    color: var(--btn-text-over);
+}
+
+button.base:active {
+    background-color: var(--btn-bg-down);
+    color: var(--btn-text-down);
+    border: 1px solid var(--btn-text-down);
+}
+
+button.base:focus {
+    border: solid 1px var(--btn-focus-ring);
+}
+/* endregion */
+
+/* region Utils */
+.pad-left-1 {
+    padding-left: 0.5rem;
+}
+
+.margin-top-4px {
+    margin-top: 4px;
+}
+
+.margin-top-1 {
+    margin-top: 1.5rem;
+}
+/* endregion */
