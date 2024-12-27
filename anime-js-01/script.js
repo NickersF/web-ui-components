@@ -1,4 +1,4 @@
-import anime from "./anime.es.js";
+import anime from "../_jslib/anime.es.js";
 
 /*
  Starting to build up a basic pattern here where I get the elements in question
