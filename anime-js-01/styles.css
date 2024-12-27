@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+
+    --container-bg: #1C1C1C;
+}
+
+/* region CSS Reset */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+/* endregion */
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.anime-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 512px;
+    height: 256px;
+    background-color: var(--container-bg);
+    border-radius: 4px;
+}
+
+.anime-surface {
+    width: 75%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.anim-el {
+    width: 32px;
+    height: 32px;
+    background-color: #ed801d;
+    border-radius: 2px;
+}
