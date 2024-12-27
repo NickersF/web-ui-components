@@ -84,3 +84,11 @@ body {
     background-color: #ed801d;
     border-radius: 2px;
 }
+
+.scale-01-el {
+    width: 32px;
+    height: 128px;
+    background-color: #c7e463;
+    border-radius: 2px;
+    transform-origin: left;
+}
