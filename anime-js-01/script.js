@@ -59,3 +59,18 @@ animeContainerScale01.addEventListener("click", function () {
     
     widthAnimation.play();
 });
+
+const animeContainerSvgLine01 = document.querySelector(".anime-container.svg-line-01");
+const svgAnim01 = anime({
+    targets: '.svg-line-01 path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutSine',
+    duration: 1500,
+    delay: function(el, i) { return i * 250 },
+    direction: 'alternate',
+    loop: true
+});
+
+animeContainerSvgLine01.addEventListener("click", function () {
+   svgAnim01.play(); 
+});
