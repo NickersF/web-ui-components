@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --bg-color: #202020;
+    --bg-color-secondary: #262626;
+    --font-color: #F9F6EE;
+    
+    --container-border: #202020;
+
+    --btn-bg: var(--bg-color-secondary);
+    --btn-bg-over: #323232;
+    --btn-bg-down: #141414;
+
+    --btn-text: #C3C2BD;
+}
+
+/* region CSS Reset */
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -40,4 +55,70 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
+}
+/* endregion */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.container-panels {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+}
+
+.section-sidebar {
+    display: grid;
+    grid-template-rows: 1fr auto auto auto;
+    background-color: var(--bg-color-secondary);
+    border: 2px solid hotpink;
+    padding: 0.5rem 0 0.5rem 0;
+    /*border: 2px solid var(--container-border);*/
+}
+
+.sidebar-item {
+    display: grid;
+    place-items: center;
+    padding: 0.5rem 0 0 0;
+}
+
+.section-main-content {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.panel-container {
+    border-top: 2px solid hotpink;
+    border-right: 2px solid hotpink;
+    border-bottom: 2px solid hotpink;
+    /*border: 2px solid var(--container-border);*/
+}
+
+.panel-header {
+    background-color: var(--bg-color-secondary);
+}
+
+.menu-button {
+    appearance: none;
+    padding: 4px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.menu-button:hover {
+    background-color: var(--btn-bg-over);
+}
+
+.menu-button:active {
+    background-color: #cd4c2d;
+    color: var(--font-color);
 }
