@@ -103,7 +103,7 @@ body {
 .panel-container {
     border-top: 2px solid var(--container-border);
     border-right: 2px solid var(--container-border);
-    /*border-bottom: 2px solid var(--container-border);*/
+    height: 200px;
     min-height: 72px;
 }
 
