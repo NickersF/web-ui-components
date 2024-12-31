@@ -19,8 +19,9 @@ document.addEventListener("mousemove", function (e) {
         let containerPanelsRect = containerPanels.getBoundingClientRect();
         let sectionMainContentRect = sectionMainContent.getBoundingClientRect();
         let mainContentRect = mainContentContainer.getBoundingClientRect();
+        let panelContentRect = panelContainer.getBoundingClientRect();
 
-        if (mainContentRect.height === 72 && e.clientY < 72) {
+        if (mainContentRect.height === 71 && e.clientY < 71) {
             let maxPanelHeight = containerPanelsRect.height - mainContentRect.height;
             lastPanelHeight = maxPanelHeight;
             panelContainer.style.height = `${Math.floor(maxPanelHeight)}px`;
@@ -28,6 +29,10 @@ document.addEventListener("mousemove", function (e) {
             let newPanelHeight = sectionMainContentRect.height - e.clientY;
             lastPanelHeight = newPanelHeight;
             panelContainer.style.height = `${Math.floor(newPanelHeight)}px`;
+        }
+        
+        if (panelContentRect.height < 71) {
+            
         }
     }
 });
@@ -45,3 +50,79 @@ document.addEventListener("mouseleave", function () {
         document.body.style.cursor = "";
     }
 });
+
+// Open panel 1
+let panel1Btn = document.getElementById("panel1Button");
+
+panel1Btn.addEventListener("click", function () {
+    let panelRect = panelContainer.getBoundingClientRect();
+    
+    if (panelRect.height > 8) {
+        panel1Btn.classList.remove("menu-button-active");
+        // panel2Btn.classList.remove("menu-button-active");
+        // panel3Btn.classList.remove("menu-button-active");
+        
+        panelContainer.style.height = "0";
+    } else {
+        panel1Btn.classList.add("menu-button-active");
+        // panel2Btn.classList.remove("menu-button-active");
+        // panel3Btn.classList.remove("menu-button-active");
+        
+        // Working on using the last user set height here, otherwise use the 200px default. This might need adjusting.
+        if (lastPanelHeight && lastPanelHeight > 32) {
+            panelContainer.style.height = `${lastPanelHeight.toString()}px`;
+        } else {
+            panelContainer.style.height = "200px";
+        }
+    }
+});
+
+// let panel2Btn = document.getElementById("panel2Button");
+//
+// panel2Btn.addEventListener("click", function () {
+//     let panelRect = panelContainer.getBoundingClientRect();
+//
+//     if (panelRect.height > 8) {
+//         panel1Btn.classList.remove("menu-button-active");
+//         panel2Btn.classList.remove("menu-button-active");
+//         panel3Btn.classList.remove("menu-button-active");
+//        
+//         panelContainer.style.height = "0";
+//     } else {
+//         panel1Btn.classList.remove("menu-button-active");
+//         panel2Btn.classList.add("menu-button-active");
+//         panel3Btn.classList.remove("menu-button-active");
+//        
+//         // Working on using the last user set height here, otherwise use the 200px default. This might need adjusting.
+//         if (lastPanelHeight && lastPanelHeight > 32) {
+//             panelContainer.style.height = `${lastPanelHeight.toString()}px`;
+//         } else {
+//             panelContainer.style.height = "200px";
+//         }
+//     }
+// });
+//
+// let panel3Btn = document.getElementById("panel3Button");
+//
+// panel3Btn.addEventListener("click", function () {
+//     let panelRect = panelContainer.getBoundingClientRect();
+//
+//     if (panelRect.height > 8) {
+//         panel1Btn.classList.remove("menu-button-active");
+//         panel2Btn.classList.remove("menu-button-active");
+//         panel3Btn.classList.remove("menu-button-active");
+//        
+//         panelContainer.style.height = "0";
+//     } else {
+//         panel1Btn.classList.remove("menu-button-active");
+//         panel2Btn.classList.remove("menu-button-active");
+//         panel3Btn.classList.add("menu-button-active");
+//        
+//         // Working on using the last user set height here, otherwise use the 200px default. This might need adjusting.
+//         if (lastPanelHeight && lastPanelHeight > 32) {
+//             panelContainer.style.height = `${lastPanelHeight.toString()}px`;
+//         } else {
+//             panelContainer.style.height = "200px";
+//         }
+//     }
+// });

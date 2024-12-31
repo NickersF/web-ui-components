@@ -5,7 +5,7 @@
     --bg-color-secondary: #262626;
     --font-color: #F9F6EE;
     
-    --container-border: #202020;
+    --container-border: #1a1a1a;
 
     --btn-bg: var(--bg-color-secondary);
     --btn-bg-over: #323232;
@@ -13,7 +13,7 @@
 
     --btn-text: #C3C2BD;
     
-    --resize-handle-color: #404040;
+    --resize-handle-color: #444444;
 }
 
 /* region CSS Reset */
@@ -80,7 +80,7 @@ body {
     grid-template-rows: 1fr auto auto auto;
     background-color: var(--bg-color-secondary);
     padding: 0.5rem 0 0.5rem 0;
-    border: 2px solid var(--container-border);
+    border-right: 1px solid var(--container-border);
 }
 
 .sidebar-item {
@@ -97,14 +97,14 @@ body {
 }
 
 .main-content-container {
-    min-height: 72px;
+    min-height: 71px;
+    padding: 4px;
 }
 
 .panel-container {
-    border-top: 2px solid var(--container-border);
-    border-right: 2px solid var(--container-border);
-    height: 200px;
-    min-height: 72px;
+    border-top: 1px solid var(--container-border);
+    height: 0;
+    overflow-y: hidden;
 }
 
 .panel-resize-handle {
@@ -114,12 +114,17 @@ body {
     cursor: n-resize;
 }
 
+.panel-resize-handle:hover {
+    color: var(--btn-bg-over);
+}
+
 .panel-header {
     background-color: var(--bg-color-secondary);
+    padding: 4px;
 }
 
 .panel-content {
-    
+    padding: 4px;
 }
 
 .menu-button {
@@ -137,6 +142,11 @@ body {
 }
 
 .menu-button:active {
+    background-color: #da4723;
+    color: var(--font-color);
+}
+
+.menu-button-active {
     background-color: #da4723;
     color: var(--font-color);
 }
