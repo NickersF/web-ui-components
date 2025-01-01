@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
     background-color: var(--bg-color);
     color: var(--font-color);
@@ -70,6 +71,7 @@ body {
     height: 256px;
     background-color: var(--container-bg);
     border-radius: 4px;
+    margin-top: 1rem;
 }
 
 .anime-surface {
@@ -95,4 +97,28 @@ body {
 
 .svg-line-01 {
     
+}
+
+.tl-01 {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 2px;
+    background-color: #40dd9d;
+    margin: 2px;
+}
+
+.tl-02 {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 2px;
+    background-color: #a679f4;
+    margin: 2px;
+}
+
+.tl-03 {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 2px;
+    background-color: #ed7f41;
+    margin: 2px;
 }

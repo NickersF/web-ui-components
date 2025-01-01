@@ -22,7 +22,7 @@ const staggeredAnimation = anime({
 });
 let isStaggerAnimReversed = false;
 
-animeContainerBasic01.addEventListener("click", function (){
+animeContainerBasic01.addEventListener("click", function () {
     if (staggeredAnimation.completed) {
         isStaggerAnimReversed = !isStaggerAnimReversed;
 
@@ -32,7 +32,7 @@ animeContainerBasic01.addEventListener("click", function (){
             staggeredAnimation.direction = "normal";
         }
     }
-    
+
     staggeredAnimation.play();
 });
 
@@ -49,14 +49,14 @@ let isWidthAnimReversed = false;
 animeContainerScale01.addEventListener("click", function () {
     if (widthAnimation.completed) {
         isWidthAnimReversed = !isWidthAnimReversed;
-        
+
         if (isWidthAnimReversed) {
             widthAnimation.direction = "reverse";
         } else {
             widthAnimation.direction = "normal";
         }
     }
-    
+
     widthAnimation.play();
 });
 
@@ -66,11 +66,63 @@ const svgAnim01 = anime({
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: 'easeInOutSine',
     duration: 1500,
-    delay: function(el, i) { return i * 250 },
+    delay: function (el, i) {
+        return i * 250
+    },
     direction: 'alternate',
     loop: true
 });
 
 animeContainerSvgLine01.addEventListener("click", function () {
-   svgAnim01.play(); 
+    svgAnim01.play();
 });
+
+const animeContainerTimeLine01 = document.querySelector(".anime-container.timeline-anim-01");
+const timeline1 = anime.timeline({
+    easing: "easeOutExpo",
+    duration: 500,
+    autoplay: false,
+});
+
+timeline1.add({
+    targets: ".tl-01",
+    translateX: 250,
+})
+    .add({
+        targets: ".tl-02",
+        translateX: 220,
+    })
+    .add({
+        targets: ".tl-03",
+        translateX: 190,
+    })
+    .add({
+        targets: ".tl-01",
+        translateY: 60,
+        rotate: "1turn",
+        scale: 0,
+        opacity: 0
+    })
+    .add({
+        targets: ".tl-02",
+        translateY: 80,
+        rotate: "1turn",
+        scale: 0,
+        opacity: 0
+    })
+    .add({
+        targets: ".tl-03",
+        translateY: 100,
+        rotate: "1turn",
+        scale: 0,
+        opacity: 0,
+    });
+
+animeContainerTimeLine01.addEventListener("click", function () {
+    timeline1.play();
+});
+
+timeline1.finished.then(() => {
+        timeline1.reset()
+    }
+);
