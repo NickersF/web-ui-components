@@ -9,6 +9,8 @@ import anime from "../_jslib/anime.es.js";
  One example I want to do is that when an element is blurred a sequence of animations 
  start based on some validation behavior. You can see where this is going...
  */
+
+// List of DOM elements
 const animeContainerBasic01 = document.querySelector(".anime-container.anim-basic-01");
 const elementList = document.querySelectorAll(".anim-el");
 const staggeredAnimation = anime({
@@ -36,6 +38,7 @@ animeContainerBasic01.addEventListener("click", function () {
     staggeredAnimation.play();
 });
 
+// Scale demo
 const animeContainerScale01 = document.querySelector(".anime-container.anim-scale-01");
 const widthAnimation = anime({
     targets: ".scale-01-el",
@@ -60,6 +63,7 @@ animeContainerScale01.addEventListener("click", function () {
     widthAnimation.play();
 });
 
+// SVG demo
 const animeContainerSvgLine01 = document.querySelector(".anime-container.svg-line-01");
 const svgAnim01 = anime({
     targets: '.svg-line-01 path',
@@ -77,6 +81,7 @@ animeContainerSvgLine01.addEventListener("click", function () {
     svgAnim01.play();
 });
 
+// Timeline demo
 const animeContainerTimeLine01 = document.querySelector(".anime-container.timeline-anim-01");
 const timeline1 = anime.timeline({
     easing: "easeOutExpo",
@@ -120,9 +125,27 @@ timeline1.add({
 
 animeContainerTimeLine01.addEventListener("click", function () {
     timeline1.play();
+
+    timeline1.finished.then(() => {
+            timeline1.reset()
+        }
+    );
 });
 
-timeline1.finished.then(() => {
-        timeline1.reset()
-    }
-);
+// Keyframe demo
+const animeContainerKeyframe01 = document.querySelector(".anime-container.keyframe-el-1");
+const keyframeAnim01 = anime({
+    targets: ".keyframe-el-1",
+    keyframes: [
+        {translateX: 128},
+        {translateY: 20},
+        {translateX: 0},
+        {translateY: 0}
+    ],
+    duration: 2500,
+    loop: true
+});
+
+animeContainerKeyframe01.addEventListener("click", function () {
+    keyframeAnim01.play();
+});

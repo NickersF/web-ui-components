@@ -62,6 +62,7 @@ body {
     height: 100vh;
 }
 
+/* region Presentation classes to make it look cute */
 .anime-container {
     display: flex;
     flex-direction: column;
@@ -79,7 +80,9 @@ body {
     margin-top: 4px;
     margin-bottom: 4px;
 }
+/* endregion */
 
+/* Element list demo */
 .anim-el {
     width: 32px;
     height: 32px;
@@ -87,6 +90,7 @@ body {
     border-radius: 2px;
 }
 
+/* Scale demo */
 .scale-01-el {
     width: 32px;
     height: 128px;
@@ -95,10 +99,12 @@ body {
     transform-origin: left;
 }
 
+/* SVG demo */
 .svg-line-01 {
     
 }
 
+/* Timeline demo */
 .tl-01 {
     width: 1rem;
     height: 1rem;
@@ -121,4 +127,12 @@ body {
     border-radius: 2px;
     background-color: #ed7f41;
     margin: 2px;
+}
+
+/* Keyframe demo 1 */
+.keyframe-el-1 {
+    width: 42px;
+    height: 42px;
+    background-color: #1677f6;
+    border-radius: 2px;
 }
