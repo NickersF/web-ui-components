@@ -133,7 +133,7 @@ animeContainerTimeLine01.addEventListener("click", function () {
 });
 
 // Keyframe demo
-const animeContainerKeyframe01 = document.querySelector(".anime-container.keyframe-el-1");
+const animeContainerKeyframe01 = document.querySelector(".anime-container.keyframe-anim-01");
 const keyframeAnim01 = anime({
     targets: ".keyframe-el-1",
     keyframes: [
@@ -148,4 +148,26 @@ const keyframeAnim01 = anime({
 
 animeContainerKeyframe01.addEventListener("click", function () {
     keyframeAnim01.play();
+});
+
+// Keyframe with colors demo
+const animeContainerKeyframe02 = document.querySelector(".anime-container.keyframe-anim-02")
+const keyframeAnim02 = anime({
+    targets: ".keyframe-el-2",
+    translateX: [
+        {value: 128},
+        {value: 64},
+        {value: 0}
+    ],
+    background: [
+        {value: "#a679f4"},
+        {value: "#ed7f41"},
+        {value: "#1677f6"}
+    ],
+    duration: 2500,
+    loop: true
+});
+
+animeContainerKeyframe02.addEventListener("click", function () {
+    keyframeAnim02.play();
 });
