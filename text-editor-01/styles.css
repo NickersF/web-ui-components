@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+}
+
+/* region CSS Reset */
 /*
-    Josh's Custom CSS Reset
-    https://www.joshwcomeau.com/css/custom-css-reset/
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
 */
 
 *, *::before, *::after {
@@ -16,6 +22,10 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -34,20 +44,17 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
     text-wrap: pretty;
 }
-
 h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
+/* endregion */
 
-/*
-    Demo CSS starts here
-*/
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100dvh;
+    background-color: var(--bg-color);
+    color: var(--font-color);
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100vh;
 }
 
 .container-1 {
@@ -63,16 +70,12 @@ body {
     background-color: #e6d9f3;
 }
 
-#editTab {
-    margin: 0.5rem;
-}
-
-.textarea-edit {
+textarea {
+    appearance: none;
+    display: block;
+    resize: none;
     width: 100%;
-    resize: vertical;
-    min-height: 102px;
-    padding: 0.5rem;
-    border: 0;
+    background-color: #3c3c3c;
 }
 
 .display-none {
