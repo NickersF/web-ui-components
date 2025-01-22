@@ -1,0 +1,29 @@
+:root {
+    /* Main palette */
+    --bg-color: #FFFAFA;
+    --fg-color: #1D1C1C;
+    --base-red: #FA4F68;
+    --base-blue: #52AFD3;
+    --base-slate: #C2DEFF;
+
+    /* Accent palette */
+    --base-success: #32B37B;
+    --base-warning: #FBB331;
+    --base-danger: #F06148;
+    --base-info: #B282C9;
+}
+
+:root.dark-mode {
+    /* Main palette */
+    --bg-color: #1D1C1C;
+    --fg-color: #FFFAFA;
+    --base-red: #FA4F68;
+    --base-blue: #52AFD3;
+    --base-slate: #C2DEFF;
+
+    /* Accent palette */
+    --base-success: #56D27B;
+    --base-warning: #FECB3E;
+    --base-danger: #D75842;
+    --base-info: #C181DF;
+}
