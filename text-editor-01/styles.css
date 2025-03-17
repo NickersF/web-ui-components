@@ -3,6 +3,22 @@
 :root {
     --bg-color: #202020;
     --font-color: #F9F6EE;
+
+    --btn-bg: #181818;
+    --btn-bg-over: #1C1C1C;
+    --btn-bg-down: #141414;
+
+    --btn-text: #C3C2BD;
+    --btn-text-over: #90908F;
+    --btn-text-down: #B2B1AE;
+
+    /* Borders */
+    --btn-border: #333333;
+    --btn-focus-ring: rgba(58, 186, 127, 0.75);
+
+    /* Utils */
+    --2px: 2px;
+    --4px: 4px;
 }
 
 /* region CSS Reset */
@@ -48,6 +64,8 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 /* endregion */
+
+
 
 body {
     display: flex;
@@ -97,6 +115,28 @@ body {
     border-radius: 0;
 }
 
+/* Button base */
+button.base {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--4px);
+    padding: var(--2px) var(--4px);
+    transition: all 150ms ease-in-out;
+}
+
+button.base:hover {
+    background-color: var(--btn-bg-over);
+    border: 1px solid var(--btn-text-over);
+    color: var(--btn-text-over);
+}
+
+button.base:active {
+    background-color: var(--btn-bg-down);
+    color: var(--btn-text-down);
+    border: 1px solid var(--btn-text-down);
+}
+
 textarea {
     appearance: none;
     display: flex;
@@ -110,4 +150,21 @@ textarea {
 
 .display-none {
     display: none;
+}
+
+/* Set the focus border for the button variants */
+button.base:focus, button.solid:focus, button.outline:focus {
+    border: solid 1px var(--btn-focus-ring);
+}
+
+/* Scaling modifier classes for the button variants */
+button.base.button-lg, button.outline.button-lg, button.solid.button-lg {
+    font-size: 1.25rem;
+    padding: var(--4px) var(--4px);
+}
+
+button.base.button-xl, button.outline.button-xl, button.solid.button-xl {
+    font-size: 1.5rem;
+    border-width: 2px;
+    padding: var(--4px) 1rem;
 }
