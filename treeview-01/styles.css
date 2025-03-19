@@ -5,105 +5,67 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Testing background stuff */
-.sizer-7 {
-    width: 7px;
-    height: 7px;
-    background-color: #5b5b5b;
+/* Base padding for tree nodes */
+.tv-pl-1rem {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0.25rem 0;
 }
 
-.sizer-16 {
+/* Vertical line for nodes with children */
+.tv-node {
+    position: relative;
+}
+
+/* Vertical connecting line */
+.tv-node > .tv-pl-1rem::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    height: 100%;
+    border-left: 1px dashed #999;
+}
+
+/* Horizontal connecting line to each child node */
+.tv-node > .tv-pl-1rem::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.7em;
+    width: 0.75rem;
+    border-bottom: 1px dashed #999;
+}
+
+/* Terminates the vertical line of the last child */
+.tv-node > .tv-pl-1rem:last-child::before {
+    height: 0.7em;
+}
+
+/* Toggle icon styles */
+.tv-toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 16px;
-    background-color: #CCCCCC;
+    margin-right: 5px;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
-.tv-node-container {
-    display: flex;
+/* Bootstrap icon size and color */
+.tv-toggle-icon i {
+    font-size: 14px;
+    color: #555;
 }
 
-.tv-node-expander {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Rotate the icon when not expanded */
+.tv-toggle-icon:not(.expanded) i.bi-chevron-down {
+    transform: rotate(-90deg);
 }
 
-.tv-node-content {
-    display: flex;
-}
-
-.tv-node-connector-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tv-ml-neg-15 {
-    margin-left: -15px;
-}
-
-.tv-ml-5 {
-    margin-left: 10px
-}
-
-.tv-ml-12 {
-    margin-left: 12px;
-}
-
-.tv-ml-20 {
-    margin-left: 20px;
-}
-
-.tv-pr-4 {
-    padding-right: 4px;
-}
-
-.bg-base {
-    background-color: #FFF;
-}
-
-.bg-node-beg {
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-}
-
-.bg-node-open,
-.bg-node-through,
-.bg-node-no-child,
-.bg-node-end {
-    width: 40px;
-    height: 20px;
-    background-repeat: no-repeat;
-}
-
-.bg-node-beg {
-    background-image: url("bg_beg_node_10.svg");
-    background-position: left center;
-    background-position-x: 1px;
-    
-}
-
-.bg-node-open {
-    background-image: url("bg_opn_node_10.svg");
-    background-position: left center;
-    background-position-x: 1px;
-}
-
-.bg-node-through {
-    background-image: url("bg_thr_node_10.svg");
-    background-position: right center;
-    background-position-x: 19px;
-}
-
-.bg-node-no-child {
-    background-image: url("bg_sng_node_10.svg");
-    background-position: right center;
-    background-position-x: 19px;
-}
-
-.bg-node-end {
-    background-image: url("bg_end_node_10.svg");
-    background-position: right center;
-    background-position-x: 19px;
+/* Transition for smooth rotation */
+.tv-toggle-icon i {
+    transition: transform 0.2s ease;
 }

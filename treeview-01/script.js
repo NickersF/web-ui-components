@@ -17,16 +17,19 @@ let treeviewDataFlat = [
     {
         id: 4,
         name: "Node",
-        parent_id: 1
+        parent_id: 2
     },
     {
         id: 5,
         name: "Node",
+        parent_id: 1
+    },
+    {
+        id: 6,
+        name: "Node",
         parent_id: null
     }
 ];
-
-console.log(treeviewDataFlat);
 
 // The main loop to render the treeview
 function renderTreeView(treeviewId, treeviewData) {
@@ -85,6 +88,55 @@ function generateTreeViewNodes(node, parentElement, nodeData) {
 
 renderTreeView("myTreeview", treeviewDataFlat);
 
+// Toggles nodes with them all closed initially
+function toggleNodes() {
+    document.querySelectorAll(".tv-node").forEach(function(node) {
+        // Hide all child nodes to start
+        Array.from(node.children).forEach(function(child) {
+            if (child.classList.contains("tv-pl-1rem")) {
+                child.style.display = "none";
+            }
+        });
+
+        // Reset the icons
+        const toggleIcon = node.querySelector(".tv-toggle-icon");
+        
+        if (toggleIcon) {
+            toggleIcon.classList.remove("expanded");
+        }
+    });
+
+    // Bind up the click event to the toggle icons
+    document.querySelectorAll(".tv-toggle-icon").forEach(function(icon) {
+        icon.addEventListener("click", function() {
+            let parentNode = this.closest(".tv-node");
+            
+            // Toggle anim
+            this.classList.toggle("expanded");
+            
+            if (parentNode) {
+                if (this.classList.contains("expanded")) {
+                    // Show children
+                    Array.from(parentNode.children).forEach(function(child) {
+                        if (child.classList.contains("tv-pl-1rem")) {
+                            child.style.display = "";
+                        }
+                    });
+                } else {
+                    // Hide children
+                    Array.from(parentNode.children).forEach(function(child) {
+                        if (child.classList.contains("tv-pl-1rem")) {
+                            child.style.display = "none";
+                        }
+                    });
+                }
+            }
+        });
+    });
+}
+
+toggleNodes();
+
 // Review of a stack basic basic basic
 class Stack {
     constructor() {
@@ -124,15 +176,15 @@ class Stack {
     }
 }
 
-const stack = new Stack();
-
-stack.push(10);
-stack.push(20);
-stack.push(30);
-stack.push(40);
-
-console.log(stack.peek());
-console.log(stack.pop());
-console.log(stack.size());
-console.log(stack.isEmpty());
-stack.print();
+// const stack = new Stack();
+//
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
+// stack.push(40);
+//
+// console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.size());
+// console.log(stack.isEmpty());
+// stack.print();
