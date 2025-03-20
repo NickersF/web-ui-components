@@ -6,19 +6,22 @@ body {
 }
 
 /* Base padding for tree nodes */
-.tv-pl-1rem {
+.tv-node-item {
+    background-color: #aad5f4;
     position: relative;
     padding-left: 1.5rem;
-    margin-top: 1px;
+    /*margin-top: 1px;*/
 }
 
 /* Vertical line for nodes with children */
-.tv-node {
+.tv-root-node-item {
+    background-color: #aef1d4;
     position: relative;
 }
 
 /* Vertical connecting line */
-.tv-node > .tv-pl-1rem::before {
+.tv-root-node-item > .tv-node-item::before {
+    /*background-color: #efd3cb;*/
     content: "";
     position: absolute;
     left: 0.5rem;
@@ -28,27 +31,35 @@ body {
 }
 
 /* Horizontal connecting line to each child node */
-.tv-node > .tv-pl-1rem::after {
+.tv-root-node-item > .tv-node-item::after {
     content: "";
     position: absolute;
     left: 0.5rem;
-    top: 0.72em;
+    top: 0.62rem;
     width: 0.75rem;
     border-bottom: 1px dotted #999;
 }
 
 /* Terminates the vertical line of the last child */
-.tv-node > .tv-pl-1rem:last-child::before {
+.tv-root-node-item > .tv-node-item:last-child::before {
+    position: absolute;
     height: 0.7em;
+    top: 1px;
 }
 
-.tv-node > .tv-pl-1rem:last-child::after {
+.tv-root-node-item > .tv-node-item:last-child::after {
     content: "";
     position: absolute;
     left: 0.5rem;
-    top: 0.68em;
+    top: 0.61rem;
     width: 0.75rem;
     border-bottom: 1px dotted #999;
+}
+
+.tv-node-content {
+    background-color: #80b1f3;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 /* Toggle icon styles */
@@ -58,7 +69,7 @@ body {
     justify-content: center;
     width: 16px;
     height: 16px;
-    margin-right: 5px;
+    margin-right: 4px;
     cursor: pointer;
     vertical-align: middle;
 }

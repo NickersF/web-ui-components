@@ -90,10 +90,10 @@ renderTreeView("myTreeview", treeviewDataFlat);
 
 // Toggles nodes with them all closed initially
 function toggleNodes() {
-    document.querySelectorAll(".tv-node").forEach(function(node) {
+    document.querySelectorAll(".tv-root-node-item").forEach(function(node) {
         // Hide all child nodes to start
         Array.from(node.children).forEach(function(child) {
-            if (child.classList.contains("tv-pl-1rem")) {
+            if (child.classList.contains("tv-node-item")) {
                 child.style.display = "none";
             }
         });
@@ -109,7 +109,7 @@ function toggleNodes() {
     // Bind up the click event to the toggle icons
     document.querySelectorAll(".tv-toggle-icon").forEach(function(icon) {
         icon.addEventListener("click", function() {
-            let parentNode = this.closest(".tv-node");
+            let parentNode = this.closest(".tv-root-node-item");
             
             // Toggle anim
             this.classList.toggle("expanded");
@@ -118,14 +118,14 @@ function toggleNodes() {
                 if (this.classList.contains("expanded")) {
                     // Show children
                     Array.from(parentNode.children).forEach(function(child) {
-                        if (child.classList.contains("tv-pl-1rem")) {
+                        if (child.classList.contains("tv-node-item")) {
                             child.style.display = "";
                         }
                     });
                 } else {
                     // Hide children
                     Array.from(parentNode.children).forEach(function(child) {
-                        if (child.classList.contains("tv-pl-1rem")) {
+                        if (child.classList.contains("tv-node-item")) {
                             child.style.display = "none";
                         }
                     });

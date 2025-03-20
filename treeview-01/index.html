@@ -18,20 +18,53 @@
 
 <h3>Custom tree view layout</h3>
 
-<div class="tv-pl-1rem tv-node">
+<div class="tv-node-item tv-root-node-item">
+    <div>
+        <span class="tv-toggle-icon">
+            <i class="bi bi-chevron-down"></i>
+        </span>
+        <span class="tv-node-content">Node 1</span>
+    </div>
+    <div class="tv-node-item">
+        <span class="tv-node-content">Node 2</span>
+    </div>
+    <div class="tv-node-item tv-root-node-item">
+        <div>
+            <span class="tv-toggle-icon">
+                <i class="bi bi-chevron-down"></i>
+            </span>
+            <span class="tv-node-content">Node 3</span>
+        </div>
+        <div class="tv-node-item">
+            <span class="tv-node-content">Node 4</span>
+        </div>
+        <div class="tv-node-item">
+            <span class="tv-node-content">Node 5</span>
+        </div>
+    </div>
+    <div class="tv-node-item">
+        <span class="tv-node-content">Node 6</span>
+    </div>
+</div>
+<div class="tv-node-item">
+    <span class="tv-node-content">Node 7</span>
+</div>
+
+<h3>First revision</h3>
+
+<div class="tv-node-item tv-root-node-item">
     <span class="tv-toggle-icon"><i class="bi bi-chevron-down"></i></span>
     Node 1
-    <div class="tv-pl-1rem">Node 2</div>
-    <div class="tv-pl-1rem tv-node">
+    <div class="tv-node-item">Node 2</div>
+    <div class="tv-node-item tv-root-node-item">
         <span class="tv-toggle-icon"><i class="bi bi-chevron-down"></i></span>
         Node 3
-        <div class="tv-pl-1rem">Node 4</div>
-        <div class="tv-pl-1rem">Node 5</div>
+        <div class="tv-node-item">Node 4</div>
+        <div class="tv-node-item">Node 5</div>
     </div>
-    <div class="tv-pl-1rem">Node 6</div>
+    <div class="tv-node-item">Node 6</div>
 </div>
-<div class="tv-pl-1rem">Node 7</div>
-
+<div class="tv-node-item">Node 7</div>
 
 <script src="script.js"></script>
 </body>
