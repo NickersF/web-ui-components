@@ -56,6 +56,10 @@ body {
     border-bottom: 1px dotted #999;
 }
 
+.tv-node-wrapper {
+    display: flex;
+}
+
 .tv-node-content {
     background-color: #80b1f3;
     padding-left: 4px;
@@ -65,9 +69,9 @@ body {
 /* Toggle icon styles */
 .tv-toggle-icon {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    width: 16px;
+    width: 20px;
     height: 16px;
     margin-right: 4px;
     cursor: pointer;
