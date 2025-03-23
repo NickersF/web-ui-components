@@ -1,80 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-<div id="myTreeview" class="treeview"></div>
-
-<h3>Second revision</h3>
-
-<div id="treeview">
-	<div class="tv-node tv-node-root">
-		<div class="tv-node-wrapper">
-	        <span class="tv-toggle-icon">
-	            <i class="bi bi-chevron-down"></i>
-	        </span>
-			<span class="tv-node-content">Node 1</span>
-		</div>
-		<div class="tv-node">
-			<span class="tv-node-content">Node 2</span>
-		</div>
-		<div class="tv-node tv-node-root">
-			<div class="tv-node-wrapper">
-	            <span class="tv-toggle-icon">
-	                <i class="bi bi-chevron-down"></i>
-	            </span>
-				<span class="tv-node-content">Node 3</span>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	
+	<body>
+		<h3>The data-driven version</h3>
+		
+		<div id="treeview2"></div>
+		
+		<h3>Static version to establish the UI components</h3>
+		
+		<div id="treeview">
+			<div class="tv-node tv-node-root">
+				<div class="tv-node-wrapper">
+		        <span class="tv-toggle-icon">
+		            <i class="bi bi-chevron-down"></i>
+		        </span>
+					<span class="tv-node-content">Node 1</span>
+				</div>
+				<div class="tv-node">
+					<span class="tv-node-content">Node 2</span>
+				</div>
+				<div class="tv-node tv-node-root">
+					<div class="tv-node-wrapper">
+		            <span class="tv-toggle-icon">
+		                <i class="bi bi-chevron-down"></i>
+		            </span>
+						<span class="tv-node-content">Node 3</span>
+					</div>
+					<div class="tv-node">
+						<span class="tv-node-content">Node 4</span>
+					</div>
+					<div class="tv-node">
+						<span class="tv-node-content">Node 5</span>
+					</div>
+				</div>
+				<div class="tv-node tv-node-root">
+					<span class="tv-node-content">Node 6</span>
+				</div>
 			</div>
 			<div class="tv-node">
-				<span class="tv-node-content">Node 4</span>
-			</div>
-			<div class="tv-node">
-				<span class="tv-node-content">Node 5</span>
+				<span class="tv-node-content">Node 7</span>
 			</div>
 		</div>
+		
+		<h3>First attempt</h3>
+		
 		<div class="tv-node tv-node-root">
-			<span class="tv-node-content">Node 6</span>
+			<span class="tv-toggle-icon"><i class="bi bi-chevron-down"></i></span>
+			Node 1
+			<div class="tv-node">Node 2</div>
+			<div class="tv-node tv-node-root">
+				<span class="tv-toggle-icon"><i class="bi bi-chevron-down"></i></span>
+				Node 3
+				<div class="tv-node">Node 4</div>
+				<div class="tv-node">Node 5</div>
+			</div>
+			<div class="tv-node">Node 6</div>
 		</div>
-	</div>
-	<div class="tv-node">
-		<span class="tv-node-content">Node 7</span>
-	</div>
-</div>
-
-<h3>Second revision using the render function</h3>
-
-<div id="treeview2">
-
-</div>
-
-<h3>First revision</h3>
-
-<div class="tv-node tv-node-root">
-	<span class="tv-toggle-icon"><i class="bi bi-chevron-down"></i></span>
-	Node 1
-	<div class="tv-node">Node 2</div>
-	<div class="tv-node tv-node-root">
-		<span class="tv-toggle-icon"><i class="bi bi-chevron-down"></i></span>
-		Node 3
-		<div class="tv-node">Node 4</div>
-		<div class="tv-node">Node 5</div>
-	</div>
-	<div class="tv-node">Node 6</div>
-</div>
-<div class="tv-node">Node 7</div>
-
-<script src="script.js"></script>
-</body>
-
+		<div class="tv-node">Node 7</div>
+		
+		<script src="script.js"></script>
+	</body>
 </html>
