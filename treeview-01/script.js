@@ -81,63 +81,63 @@ function generateTreeView(data, containerId) {
     rootNodes.forEach(rootNode => {
         renderNode(rootNode, container, true);
     });
+}
 
-    function renderNode(node, parentElement, isRoot) {
-        const nodeElement = document.createElement("div");
-        
-        // Set the render type of root or non-root (leaf)
-        if (isRoot) {
-            nodeElement.className = "tv-node tv-node-root";
-        } else {
-            nodeElement.className = "tv-node";
-        }
+function renderNode(node, parentElement, isRoot) {
+    const nodeElement = document.createElement("div");
 
-        if (node.children.length > 0) {
-            // Build out a root node with its wrapper and toggle control
-            const wrapperElement = document.createElement("div");
-            wrapperElement.className = "tv-node-wrapper";
-
-            const toggleIcon = document.createElement("span");
-            toggleIcon.className = "tv-toggle-icon expanded";
-
-            const icon = document.createElement("i");
-            icon.className = "bi bi-chevron-down";
-
-            toggleIcon.appendChild(icon);
-            wrapperElement.appendChild(toggleIcon);
-
-            // Build the node content element
-            const nodeContent = document.createElement("span");
-            nodeContent.className = "tv-node-content";
-            nodeContent.textContent = node.name;
-
-            wrapperElement.appendChild(nodeContent);
-            nodeElement.appendChild(wrapperElement);
-
-            // Recursively render children
-            node.children.forEach(childNode => {
-                // Check if this child has its own children
-                let childHasChildren;
-                
-                if (childNode.children && childNode.children.length > 0) {
-                    childHasChildren = true;
-                } else {
-                    childHasChildren = false;
-                }
-                
-                renderNode(childNode, nodeElement, childHasChildren);
-            });
-        } else {
-            // Leaf node without children
-            const nodeContent = document.createElement("span");
-            nodeContent.className = "tv-node-content";
-            nodeContent.textContent = node.name;
-
-            nodeElement.appendChild(nodeContent);
-        }
-
-        parentElement.appendChild(nodeElement);
+    // Set the render type of root or non-root (leaf)
+    if (isRoot) {
+        nodeElement.className = "tv-node tv-node-root";
+    } else {
+        nodeElement.className = "tv-node";
     }
+
+    if (node.children.length > 0) {
+        // Build out a root node with its wrapper and toggle control
+        const wrapperElement = document.createElement("div");
+        wrapperElement.className = "tv-node-wrapper";
+
+        const toggleIcon = document.createElement("span");
+        toggleIcon.className = "tv-toggle-icon expanded";
+
+        const icon = document.createElement("i");
+        icon.className = "bi bi-chevron-down";
+
+        toggleIcon.appendChild(icon);
+        wrapperElement.appendChild(toggleIcon);
+
+        // Build the node content element
+        const nodeContent = document.createElement("span");
+        nodeContent.className = "tv-node-content";
+        nodeContent.textContent = node.name;
+
+        wrapperElement.appendChild(nodeContent);
+        nodeElement.appendChild(wrapperElement);
+
+        // Recursively render children
+        node.children.forEach(childNode => {
+            // Check if this child has its own children
+            let childHasChildren;
+
+            if (childNode.children && childNode.children.length > 0) {
+                childHasChildren = true;
+            } else {
+                childHasChildren = false;
+            }
+
+            renderNode(childNode, nodeElement, childHasChildren);
+        });
+    } else {
+        // Leaf node without children
+        const nodeContent = document.createElement("span");
+        nodeContent.className = "tv-node-content";
+        nodeContent.textContent = node.name;
+
+        nodeElement.appendChild(nodeContent);
+    }
+
+    parentElement.appendChild(nodeElement);
 }
 
 // Usage
