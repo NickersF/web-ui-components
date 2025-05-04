@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "../base-css/reset.css";
+
+:root {
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+
+    --container-bg: #1C1C1C;
+}
+
+body {
+    display: flex;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.svg-tri-container {
+    width: 128px;
+    height: 128px;
+    background-color: #5e9df3;
+}
+
+.svg-morph-container {
+    width: 128px;
+    height: 128px;
+    background-color: #34d384;
+}
