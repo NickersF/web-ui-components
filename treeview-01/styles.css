@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Base padding for tree nodes */
+.tv-node {
+    background-color: #aad5f4;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Vertical line for nodes with children */
+.tv-node-root {
+    background-color: #aef1d4;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Vertical connecting line */
+.tv-node-root > .tv-node::before {
+    /*background-color: #efd3cb;*/
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    height: 100%;
+    border-left: 1px dotted #999;
+}
+
+/* Horizontal connecting line to each child node */
+.tv-node-root > .tv-node::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.62rem;
+    width: 0.75rem;
+    border-bottom: 1px dotted #999;
+}
+
+/* Terminates the vertical line of the last child */
+.tv-node-root > .tv-node:last-child::before {
+    position: absolute;
+    height: 0.7em;
+    top: 1px;
+}
+
+.tv-node-root > .tv-node:last-child::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.61rem;
+    width: 0.75rem;
+    border-bottom: 1px dotted #999;
+}
+
+.tv-node-wrapper {
+    display: flex;
+}
+
+.tv-node-content {
+    background-color: #80b1f3;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Toggle icon styles */
+.tv-toggle-icon {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 20px;
+    height: 16px;
+    margin-right: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* Bootstrap icon size and color */
+.tv-toggle-icon i {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Rotate the icon when not expanded */
+.tv-toggle-icon:not(.expanded) i.bi-chevron-down {
+    transform: rotate(-90deg);
+}
+
+/* Transition for smooth rotation */
+.tv-toggle-icon i {
+    transition: transform 0.2s ease;
+}

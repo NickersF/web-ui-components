@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "../base-css/reset.css";
+@import "../base-css/colors.css";
+
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.box {
+    border: 2px solid #666;
+    background-color: #ddd;
+    border-radius: 0.5em;
+    padding: 10px;
+    cursor: move;
+}
+
+.box.over {
+    border: 2px dotted #666;
+}
