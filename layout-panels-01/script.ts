@@ -1,56 +1,67 @@
-const containerPanels = document.querySelector(".panels-container");
-const sectionMainContent = document.querySelector(".section-main-content");
-const mainContentContainer = document.querySelector(".main-content-container");
-const panelContainer = document.querySelector(".panel-container");
-const resizeHandle = document.querySelector(".panel-resize-handle");
+const containerPanels: HTMLElement = document.querySelector(".panels-container");
+const sectionMainContent: HTMLElement = document.querySelector(".section-main-content");
+const mainContentContainer: HTMLElement = document.querySelector(".main-content-container")
+const panelContainer: HTMLElement = document.querySelector(".panel-container");
+const resizeHandle: HTMLElement = document.querySelector(".panel-resize-handle");
+
 // Get the sidebar items
-const sideBarButtons = document.querySelectorAll(".menu-button");
+const sideBarButtons: NodeListOf<Element> = document.querySelectorAll(".menu-button");
+
+// Bind up the events
 sideBarButtons.forEach((element) => {
     element.addEventListener("click", function (e) {
-        console.log(e.currentTarget);
+        console.log(e);
         console.log(this);
     });
 });
-let isResizing = false;
-let lastPanelHeight;
-resizeHandle.addEventListener("mousedown", function (e) {
+
+let isResizing: boolean = false;
+let lastPanelHeight: number;
+
+resizeHandle.addEventListener("mousedown", function(e) {
     isResizing = true;
     document.body.style.cursor = "n-resize";
     e.preventDefault();
 });
+
 document.addEventListener("mousemove", function (e) {
     if (isResizing) {
         e.preventDefault();
-        let containerPanelsRect = containerPanels.getBoundingClientRect();
-        let sectionMainContentRect = sectionMainContent.getBoundingClientRect();
-        let mainContentRect = mainContentContainer.getBoundingClientRect();
-        let panelContentRect = panelContainer.getBoundingClientRect();
+        let containerPanelsRect: DOMRect = containerPanels.getBoundingClientRect();
+        let sectionMainContentRect: DOMRect = sectionMainContent.getBoundingClientRect();
+        let mainContentRect: DOMRect = mainContentContainer.getBoundingClientRect();
+        let panelContentRect: DOMRect = panelContainer.getBoundingClientRect();
+
         if (mainContentRect.height === 71 && e.clientY < 71) {
-            let maxPanelHeight = containerPanelsRect.height - mainContentRect.height;
+            let maxPanelHeight: number = containerPanelsRect.height - mainContentRect.height;
             lastPanelHeight = maxPanelHeight;
             panelContainer.style.height = `${Math.floor(maxPanelHeight)}px`;
-        }
-        else {
-            let newPanelHeight = sectionMainContentRect.height - e.clientY;
+        } else {
+            let newPanelHeight: number = sectionMainContentRect.height - e.clientY;
             lastPanelHeight = newPanelHeight;
             panelContainer.style.height = `${Math.floor(newPanelHeight)}px`;
         }
+
         if (panelContentRect.height < 71) {
+
         }
     }
 });
+
 document.addEventListener("mouseup", function () {
     if (isResizing) {
         isResizing = false;
         document.body.style.cursor = "";
     }
 });
+
 document.addEventListener("mouseleave", function () {
     if (isResizing) {
         isResizing = false;
         document.body.style.cursor = "";
     }
 });
+
 // Show/hide panels
 // let panel1Btn: HTMLElement = document.getElementById("panel1Button");
 //
@@ -71,4 +82,3 @@ document.addEventListener("mouseleave", function () {
 //         }
 //     }
 // });
-//# sourceMappingURL=script.js.map
