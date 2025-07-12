@@ -4,13 +4,15 @@ const mainContentContainer = document.querySelector(".main-content-container");
 const panelContainer = document.querySelector(".panel-container");
 const resizeHandle = document.querySelector(".panel-resize-handle");
 // Get the sidebar items
-const sideBarButtons = document.querySelectorAll(".menu-button");
-sideBarButtons.forEach((element) => {
-    element.addEventListener("click", function (e) {
-        console.log(e.currentTarget);
-        console.log(this);
-    });
-});
+// const sideBarButtons: NodeListOf<Element> = document.querySelectorAll(".menu-button");
+//
+// // Bind up the events
+// sideBarButtons.forEach((element) => {
+//     element.addEventListener("click", function (e) {
+//         console.log(e);
+//         console.log(this);
+//     });
+// });
 let isResizing = false;
 let lastPanelHeight;
 resizeHandle.addEventListener("mousedown", function (e) {
@@ -51,24 +53,39 @@ document.addEventListener("mouseleave", function () {
         document.body.style.cursor = "";
     }
 });
+// Show the current panel from panel header
+let panelHeaderToggleButton = document.querySelector(".panel-button");
+panelHeaderToggleButton.addEventListener("click", function (e) {
+    let panelRect = panelContainer.getBoundingClientRect();
+    if (panelRect.height > 41) {
+        panelContainer.style.height = "41px";
+    }
+    else {
+        if (lastPanelHeight && lastPanelHeight > 41) {
+            panelContainer.style.height = `${lastPanelHeight.toString()}px`;
+        }
+        else {
+            panelContainer.style.height = "200px";
+        }
+    }
+});
 // Show/hide panels
-// let panel1Btn: HTMLElement = document.getElementById("panel1Button");
-//
-// panel1Btn.addEventListener("click", function (e) {
-//     let panelRect: DOMRect = panelContainer.getBoundingClientRect();
-//
-//     if (panelRect.height > 8) {
-//         panel1Btn.classList.remove("menu-button-active");
-//         panelContainer.style.height = "0";
-//     } else {
-//         panel1Btn.classList.add("menu-button-active");
-//
-//         // Working on using the last user set height here, otherwise use the 200 px default. This might need adjusting.
-//         if (lastPanelHeight && lastPanelHeight > 32) {
-//             panelContainer.style.height = `${lastPanelHeight.toString()}px`;
-//         } else {
-//             panelContainer.style.height = "200px";
-//         }
-//     }
-// });
+let panel1Btn = document.getElementById("panel1Button");
+panel1Btn.addEventListener("click", function (e) {
+    let panelRect = panelContainer.getBoundingClientRect();
+    if (panelRect.height > 41) {
+        panel1Btn.classList.remove("menu-button-active");
+        panelContainer.style.height = "41px";
+    }
+    else {
+        panel1Btn.classList.add("menu-button-active");
+        // Working on using the last user set height here, otherwise use the 200 px default. This might need adjusting.
+        if (lastPanelHeight && lastPanelHeight > 41) {
+            panelContainer.style.height = `${lastPanelHeight.toString()}px`;
+        }
+        else {
+            panelContainer.style.height = "200px";
+        }
+    }
+});
 //# sourceMappingURL=script.js.map
