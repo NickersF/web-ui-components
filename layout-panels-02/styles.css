@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "../base-css/reset.css";
+
+:root {
+    --bg-color: #1e1e1e;
+    --bg-color-secondary: #262626;
+    --font-color: #F9F6EE;
+
+    --container-border: #1a1a1a;
+
+    --btn-bg: var(--bg-color-secondary);
+    --btn-bg-over: #323232;
+    --btn-bg-down: #141414;
+
+    --btn-text: #C3C2BD;
+
+    --resize-handle-color: #444444;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.panels-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+}
+
+.section-sidebar {
+    display: grid;
+    grid-template-rows: 1fr auto auto auto;
+    background-color: var(--bg-color-secondary);
+    padding: 0.5rem 0 0.5rem 0;
+    border-right: 1px solid var(--container-border);
+}
+
+.sidebar-item {
+    display: grid;
+    place-items: center;
+    padding: 4px 4px 0 4px;
+}
+
+.section-main-content {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    max-height: 100%;
+}
+
+.main-content-container {
+    min-height: 71px;
+    padding: 4px;
+}
+
+.panel-container {
+    border-top: 1px solid var(--container-border);
+    height: 0;
+    overflow-y: hidden;
+    min-height: 41px;
+}
+
+.panel-resize-handle {
+    display: grid;
+    place-items: center;
+    color: var(--resize-handle-color);
+    cursor: n-resize;
+}
+
+.panel-resize-handle:hover {
+    color: var(--btn-bg-over);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-color-secondary);
+    padding: 4px;
+}
+
+.panel-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+    width: 21px;
+    transition: background-color 0.2s ease;
+}
+
+.panel-button:hover {
+    background-color: var(--btn-bg-over);
+}
+
+.panel-content {
+    padding: 4px;
+}
+
+.menu-button {
+    appearance: none;
+    padding: 4px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.menu-button:hover {
+    background-color: var(--btn-bg-over);
+}
+
+.menu-button:active {
+    background-color: #da4723;
+    color: var(--font-color);
+}
+
+.menu-button-active {
+    background-color: #da4723;
+    color: var(--font-color);
+}
