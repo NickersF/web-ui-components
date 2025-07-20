@@ -12,12 +12,12 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<div class="pl-container">
-			<div class="pl-header">Header</div>
-			<div class="pl-sidebar-left">sl</div>
-			<div class="pl-main-content">
-				mc
-				<div class="pl-bottom-panel">
+		<main class="pl-container">
+			<header class="pl-header">Header</header>
+			<aside class="pl-sidebar-left">sl</aside>
+			<section class="pl-main-container">
+				<section class="pl-main-panel"></section>
+				<section class="pl-bottom-panel">
 					<div class="pl-bottom-panel-resize-handle">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
 							<path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
@@ -25,20 +25,25 @@
 					</div>
 					<div class="pl-bottom-panel-header">
 						Panel header
-						<button class="pl-button-vertical">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-								<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-							</svg>
+						<button class="pl-button">
+							<i class="bi bi-chevron-up"></i>
 						</button>
 					</div>
 					<div class="pl-bottom-panel-content">
 						Panel content
 					</div>
+				</section>
+			</section>
+			<aside class="pl-sidebar-right">
+				<div class="pl-sidebar-header">
+					<button type="button" class="pl-button">
+						<i class="bi bi-chevron-left"></i>
+					</button>
+					<span class="pl-sidebar-header-title">Header</span>
 				</div>
-			</div>
-			<div class="pl-sidebar-right">sr</div>
-			<div class="pl-footer">Footer</div>
-		</div>
+			</aside>
+			<footer class="pl-footer">Footer</footer>
+		</main>
 		<script type="module" src="script.js"></script>
 	</body>
 </html>
