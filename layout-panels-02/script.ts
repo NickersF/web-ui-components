@@ -10,10 +10,11 @@ export class PanelLayout {
     public mainPanelClientRect: DOMRect;
 	public bottomPanel: HTMLElement;
     public bottomPanelClientRect: DOMRect;
-	public resizeHandle: HTMLElement;
+	public bottomPanelResizeHandle: HTMLElement;
 	public sidebarRight: HTMLElement;
 	public footer: HTMLElement;
-	public isResizing: boolean;
+	public isResizingRightSidebar: boolean;
+	public isResizingBottomPanel: boolean;
     public lastPanelHeight: number;
 	
 	public getCoreLayoutElements(): void {
@@ -23,26 +24,32 @@ export class PanelLayout {
 		this.mainContainer = document.querySelector(".pl-main-container") as HTMLElement;
 		this.mainPanel = document.querySelector(".pl-main-panel");
 		this.bottomPanel = document.querySelector(".pl-bottom-panel") as HTMLElement;
-		this.resizeHandle = document.querySelector(".pl-bottom-panel-resize-handle") as HTMLElement;
+		this.bottomPanelResizeHandle = document.querySelector(".pl-bottom-panel-resize-handle") as HTMLElement;
 		this.sidebarRight = document.querySelector(".pl-sidebar-right") as HTMLElement;
 		this.footer = document.querySelector(".pl-footer") as HTMLElement;
 	}
 	
-	public bindMouseDownResizeHandle(): void {
+	public bindMouseDownRightSidebarResizeHandle(): void {
+		let self = this;
+	}
+	
+	public bindMouseDownBottomPanelResizeHandle(): void {
 		let self = this;
 		
-		self.resizeHandle.addEventListener("mousedown", function (e) {
-			self.isResizing = true;
+		self.bottomPanelResizeHandle.addEventListener("mousedown", function (e) {
+			self.isResizingBottomPanel = true;
 			document.body.style.cursor = "n-resize";
 			e.preventDefault();
 		});
 	}
 	
-	public bindMouseMove(): void {
+	// Adds the global mouse move event listener to detect user mouse move inputs.
+	public bindDocumentMouseMove(): void {
 		let self = this;
         
 		document.addEventListener("mousemove", function (e) {
-            if (self.isResizing) {
+			// I think I need to add conditions here for handling the resizing of different panels
+            if (self.isResizingBottomPanel) {
                 e.preventDefault();
                 
                 self.containerClientRect = self.container.getBoundingClientRect();
@@ -68,25 +75,23 @@ export class PanelLayout {
             }
         });
 	}
-    
-    public bindMouseUp(): void {
+	
+	// Adds the global mouse up event listener to cancel resizing on mouse move inputs.
+    public bindDocumentMouseUp(): void {
         let self = this;
         
         document.addEventListener("mouseup", function () {
-            self.isResizing = false;
+            self.isResizingBottomPanel = false;
             document.body.style.cursor = "";
-            console.log(self.headerClientRect);
-            console.log(self.mainContainerClientRect);
-            console.log(self.mainPanelClientRect);
-            console.log(self.bottomPanelClientRect);
         });
     }
     
-    public bindMouseLeave(): void {
+	// Adds the global mouse leave event listener to cancel resizing when the mouse leaves the viewport.
+    public bindDocumentMouseLeave(): void {
         let self = this;
         
         document.addEventListener("mouseleave", function () {
-            self.isResizing = false;
+            self.isResizingBottomPanel = false;
             document.body.style.cursor = "";
         });
     }
@@ -95,7 +100,7 @@ export class PanelLayout {
 let panelLayout: PanelLayout = new PanelLayout();
 
 panelLayout.getCoreLayoutElements();
-panelLayout.bindMouseDownResizeHandle();
-panelLayout.bindMouseMove();
-panelLayout.bindMouseUp();
-panelLayout.bindMouseLeave();
+panelLayout.bindMouseDownBottomPanelResizeHandle();
+panelLayout.bindDocumentMouseMove();
+panelLayout.bindDocumentMouseUp();
+panelLayout.bindDocumentMouseLeave();
