@@ -68,10 +68,6 @@ export class PanelLayout {
                     self.lastPanelHeight = newPanelHeight;
                     self.bottomPanel.style.height = `${Math.floor(newPanelHeight)}px`;
                 }
-                
-                if (self.bottomPanelClientRect.height < 71) {
-                    
-                }
             }
         });
 	}
