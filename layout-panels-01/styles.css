@@ -126,6 +126,10 @@ body {
     padding: 4px;
 }
 
+.panel-content {
+    padding: 4px;
+}
+
 .panel-button {
     display: flex;
     justify-content: center;
@@ -142,10 +146,6 @@ body {
 
 .panel-button:hover {
     background-color: var(--btn-bg-over);
-}
-
-.panel-content {
-    padding: 4px;
 }
 
 .menu-button {

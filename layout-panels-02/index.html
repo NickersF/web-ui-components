@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Layout Panels - 02 - The Core</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<main class="pl-container">
+			<header class="pl-header">Header</header>
+			<aside class="pl-sidebar-left">sl</aside>
+			<section class="pl-main-container">
+				<section class="pl-main-panel"></section>
+				<div class="pl-sidebar-right-container">
+					<div class="pl-sidebar-right-content">
+						
+						<div class="pl-sidebar-right-header">
+							<div>
+								<button>I</button>
+							</div>
+							<div>
+								<span class="pl-sidebar-header-title">Header</span>
+							</div>
+						</div>
+						<div>sr</div>
+					</div>
+					<div class="pl-sidebar-right-resize-handle">
+						<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">-->
+							<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+						</svg>
+					</div>
+				</div>
+				<section class="pl-bottom-panel">
+					<div class="pl-bottom-panel-resize-handle">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+							<path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+						</svg>
+					</div>
+					<div class="pl-bottom-panel-header">
+						Panel header
+						<button class="pl-button">
+							<i class="bi bi-chevron-up"></i>
+						</button>
+					</div>
+					<div class="pl-bottom-panel-content">
+						Panel content
+					</div>
+				</section>
+			</section>
+			<footer class="pl-footer">Footer</footer>
+		</main>
+		<script type="module" src="script.js"></script>
+	</body>
+</html>
