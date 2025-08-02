@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern App UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom styles for a sleeker look and feel */
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #e5e7eb; /* gray-200 */
+        background-color: #111827; /* gray-900 */
+        overflow: hidden; /* Prevent body scrollbars */
+        font-size: 14px; /* More compact base font size */
+      }
+      
+      /* Custom scrollbar styling for a more integrated look */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1f2937; /* gray-800 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563; /* gray-600 */
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6b7280; /* gray-500 */
+      }
+      
+      /* Helper class to prevent text selection during drag */
+      .no-select {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none; /* Standard */
+      }
+      
+      /* Transition for panel opening/closing */
+      .panel-transition {
+        transition: width 300ms ease-in-out, height 300ms ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="no-select">
+    
+    <div class="h-screen w-screen flex flex-col">
+      
+      <!-- Main Area: Sidebars and Content -->
+      <div class="flex flex-1 overflow-hidden relative">
+        
+        <!-- Left Sidebar -->
+        <aside id="left-sidebar" class="bg-[#1f2937] flex flex-col shrink-0 panel-transition" style="width: 220px;">
+          <!-- Header -->
+          <div class="flex items-center justify-between h-12 px-3 border-b border-gray-700 shrink-0">
+            <div class="flex items-center space-x-2">
+              <svg class="w-6 h-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V4m0 16v-2M8 8l1.414-1.414M14.586 14.586L16 16m-1.414-8.414L16 6m-8.414 9.414L6 16m6-4a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              <span class="font-semibold text-base sidebar-text">AppFrame</span>
+            </div>
+          </div>
+          <!-- Navigation -->
+          <nav class="flex-1 px-2 py-3 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center p-1.5 text-sm rounded-md bg-gray-700 text-white">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <span class="ml-2 sidebar-text">Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center p-1.5 text-sm rounded-md hover:bg-gray-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 00-4-4H3V9h2a4 4 0 004-4V3l4 4-4 4z"></path></svg>
+              <span class="ml-2 sidebar-text">Workflows</span>
+            </a>
+            <a href="#" class="flex items-center p-1.5 text-sm rounded-md hover:bg-gray-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h4M8 7a2 2 0 012-2h4a2 2 0 012 2v8a2 2 0 01-2 2h-4a2 2 0 01-2-2z"></path></svg>
+              <span class="ml-2 sidebar-text">Analytics</span>
+            </a>
+            <a href="#" class="flex items-center p-1.5 text-sm rounded-md hover:bg-gray-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span class="ml-2 sidebar-text">Settings</span>
+            </a>
+          </nav>
+          <!-- Footer / Toggle -->
+          <div class="p-2 border-t border-gray-700 shrink-0">
+            <button id="left-sidebar-toggle" class="w-full flex items-center justify-center p-1.5 rounded-md hover:bg-gray-700">
+              <svg id="left-toggle-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg>
+            </button>
+          </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-4 overflow-y-auto">
+          <h1 class="text-2xl font-bold text-white mb-4">Main Content Area</h1>
+          <div class="bg-[#1f2937] p-4 rounded-lg shadow-lg">
+            <p class="text-gray-300">This is the central content area. It will expand to fill the available space and scroll independently if the content exceeds the viewport height. You can place your primary application components, dashboards, or editors here.</p>
+          </div>
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Example cards -->
+            <div class="bg-[#1f2937] p-3 rounded-lg shadow">Card 1</div>
+            <div class="bg-[#1f2937] p-3 rounded-lg shadow">Card 2</div>
+            <div class="bg-[#1f2937] p-3 rounded-lg shadow">Card 3</div>
+            <div class="bg-[#1f2937] p-3 rounded-lg shadow col-span-1 md:col-span-2">Card 4 (Wider)</div>
+            <div class="bg-[#1f2937] p-3 rounded-lg shadow">Card 5</div>
+          </div>
+          <div class="bg-[#1f2937] p-4 rounded-lg shadow-lg mt-4 h-[500px]">
+            <p class="text-gray-300">A tall content block to demonstrate scrolling.</p>
+          </div>
+        </main>
+        
+        <!-- Right Sidebar Container -->
+        <div id="right-sidebar-container" class="flex shrink-0">
+          <div id="right-resize-handle" class="w-1 cursor-col-resize bg-gray-700/50 hover:bg-indigo-500 transition-colors duration-200"></div>
+          <aside id="right-sidebar" class="bg-[#1f2937] flex flex-col panel-transition" style="width: 280px;">
+            <!-- Header -->
+            <div class="flex items-center justify-between h-12 px-3 border-b border-gray-700 shrink-0">
+              <h2 id="right-sidebar-title" class="font-semibold text-base">Properties</h2>
+              <button id="right-sidebar-toggle" class="p-1 rounded-md hover:bg-gray-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+              </button>
+            </div>
+            <!-- Content -->
+            <div id="right-sidebar-content" class="flex-1 p-3 overflow-y-auto">
+              <p>This is the right sidebar. It can be resized horizontally and collapsed.</p>
+            </div>
+          </aside>
+        </div>
+        
+        <!-- Expand Right Sidebar Button (Initially Hidden) -->
+        <button id="expand-right-sidebar-btn" class="hidden absolute top-12 right-0 z-10 p-1.5 bg-gray-700 hover:bg-indigo-500 rounded-l-md">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg>
+        </button>
+      
+      </div>
+      
+      <!-- Bottom Panel -->
+      <div class="flex flex-col shrink-0">
+        <div id="bottom-resize-handle" class="h-1 cursor-row-resize bg-gray-700/50 hover:bg-indigo-500 transition-colors duration-200"></div>
+        <div id="bottom-panel" class="bg-[#1f2937] overflow-hidden panel-transition" style="height: 200px;">
+          <!-- Header -->
+          <div class="flex items-center h-8 px-3 border-b border-gray-700 shrink-0">
+            <h3 class="font-medium text-sm">Terminal</h3>
+            <div class="flex-grow"></div>
+            <button id="bottom-panel-toggle" class="p-1 rounded-md hover:bg-gray-700">
+              <svg id="bottom-toggle-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+          <!-- Content -->
+          <div id="bottom-panel-content" class="p-3 h-full overflow-y-auto">
+            <p>This is the bottom panel. It can be resized vertically and collapsed.</p>
+            <div class="font-mono text-xs text-green-400 mt-2">user@host:~$ </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Status Bar -->
+      <footer class="h-7 bg-[#111827] border-t border-gray-700 flex items-center justify-between px-3 text-xs text-gray-400 shrink-0">
+        <div>Ready</div>
+        <div class="flex items-center space-x-4">
+          <span>UTF-8</span>
+          <span>2 Spaces</span>
+          <span>v1.0.0</span>
+        </div>
+      </footer>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // --- DOM Element Selectors ---
+        const leftSidebar = document.getElementById('left-sidebar');
+        const leftSidebarToggle = document.getElementById('left-sidebar-toggle');
+        const leftToggleIcon = document.getElementById('left-toggle-icon');
+        const sidebarTexts = document.querySelectorAll('.sidebar-text');
+        
+        const rightSidebarContainer = document.getElementById('right-sidebar-container');
+        const rightSidebar = document.getElementById('right-sidebar');
+        const rightSidebarToggle = document.getElementById('right-sidebar-toggle');
+        const expandRightSidebarBtn = document.getElementById('expand-right-sidebar-btn');
+        
+        const bottomPanel = document.getElementById('bottom-panel');
+        const bottomPanelToggle = document.getElementById('bottom-panel-toggle');
+        const bottomToggleIcon = document.getElementById('bottom-toggle-icon');
+        const bottomPanelContent = document.getElementById('bottom-panel-content');
+        
+        const rightResizeHandle = document.getElementById('right-resize-handle');
+        const bottomResizeHandle = document.getElementById('bottom-resize-handle');
+        
+        const body = document.body;
+        
+        // --- State ---
+        let isLeftSidebarCollapsed = false;
+        let isBottomPanelCollapsed = false;
+        let leftSidebarWidth = 220;
+        let rightSidebarWidth = 280;
+        let bottomPanelHeight = 200;
+        
+        // --- Left Sidebar Toggle ---
+        leftSidebarToggle.addEventListener('click', () => {
+          isLeftSidebarCollapsed = !isLeftSidebarCollapsed;
+          if (isLeftSidebarCollapsed) {
+            leftSidebar.style.width = '60px';
+            sidebarTexts.forEach(text => text.classList.add('hidden'));
+            leftToggleIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>`;
+          } else {
+            leftSidebar.style.width = `${leftSidebarWidth}px`;
+            sidebarTexts.forEach(text => text.classList.remove('hidden'));
+            leftToggleIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>`;
+          }
+        });
+        
+        // --- Right Sidebar Toggle ---
+        const collapseRightSidebar = () => {
+          rightSidebarContainer.classList.add('hidden');
+          expandRightSidebarBtn.classList.remove('hidden');
+        };
+        
+        const expandRightSidebar = () => {
+          rightSidebarContainer.classList.remove('hidden');
+          expandRightSidebarBtn.classList.add('hidden');
+        };
+        
+        rightSidebarToggle.addEventListener('click', collapseRightSidebar);
+        expandRightSidebarBtn.addEventListener('click', expandRightSidebar);
+        
+        // --- Bottom Panel Toggle ---
+        bottomPanelToggle.addEventListener('click', () => {
+          isBottomPanelCollapsed = !isBottomPanelCollapsed;
+          if (isBottomPanelCollapsed) {
+            bottomPanel.style.height = '32px'; // Header height
+            bottomPanelContent.classList.add('hidden');
+            bottomToggleIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>`;
+          } else {
+            bottomPanel.style.height = `${bottomPanelHeight}px`;
+            bottomPanelContent.classList.remove('hidden');
+            bottomToggleIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>`;
+          }
+        });
+        
+        // --- Resizing Logic ---
+        
+        // Right Sidebar Resizing
+        rightResizeHandle.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          body.classList.add('no-select');
+          rightSidebar.classList.remove('panel-transition'); // Disable transition for smooth resize
+          document.addEventListener('mousemove', resizeRight);
+          document.addEventListener('mouseup', stopResizeRight);
+        });
+        
+        function resizeRight(e) {
+          const newWidth = window.innerWidth - e.clientX;
+          if (newWidth > 150 && newWidth < window.innerWidth * 0.5) { // Min and max width
+            rightSidebarWidth = newWidth;
+            rightSidebar.style.width = `${newWidth}px`;
+          }
+        }
+        
+        function stopResizeRight() {
+          body.classList.remove('no-select');
+          rightSidebar.classList.add('panel-transition'); // Re-enable transition
+          document.removeEventListener('mousemove', resizeRight);
+          document.removeEventListener('mouseup', stopResizeRight);
+        }
+        
+        // Bottom Panel Resizing
+        bottomResizeHandle.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          body.classList.add('no-select');
+          bottomPanel.classList.remove('panel-transition'); // Disable transition for smooth resize
+          
+          let startY = e.clientY;
+          let startHeight = bottomPanel.offsetHeight;
+          
+          function resizeBottom(e) {
+            if (isBottomPanelCollapsed) return;
+            const deltaY = startY - e.clientY;
+            const newHeight = startHeight + deltaY;
+            
+            if (newHeight > 80 && newHeight < window.innerHeight * 0.7) { // Min and max height
+              bottomPanelHeight = newHeight;
+              bottomPanel.style.height = `${newHeight}px`;
+            }
+          }
+          
+          function stopResizeBottom() {
+            body.classList.remove('no-select');
+            bottomPanel.classList.add('panel-transition'); // Re-enable transition
+            document.removeEventListener('mousemove', resizeBottom);
+            document.removeEventListener('mouseup', stopResizeBottom);
+          }
+          
+          document.addEventListener('mousemove', resizeBottom);
+          document.addEventListener('mouseup', stopResizeBottom);
+        });
+      });
+    </script>
+  </body>
+</html>
