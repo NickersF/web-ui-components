@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendo UI with Tailwind CSS</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Kendo UI CSS and JS -->
+    <link rel="stylesheet" href="kendo-ui-core/css/default-main-dark.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="kendo-ui-core/js/kendo.ui.core.min.js"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen p-6">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+      <h1 class="text-2xl font-bold text-gray-800 mb-6">Kendo UI + Tailwind CSS</h1>
+      
+      <div class="space-y-4">
+        <div>
+          <label for="datepicker" class="block text-sm font-medium text-gray-700 mb-2">
+            Select a date:
+          </label>
+          <input id="datepicker" class="w-full" />
+        </div>
+        
+        <div>
+          <label for="textbox" class="block text-sm font-medium text-gray-700 mb-2">
+            Text Input:
+          </label>
+          <input id="textbox" class="w-full" />
+        </div>
+        
+        <div>
+          <label for="dropdownList" class="block text-sm font-medium text-gray-700 mb-2">
+            Choose an option:
+          </label>
+          <select id="dropdownList" class="w-full"></select>
+        </div>
+        
+        
+        <button id="demo-button" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors">
+          Kendo Button
+        </button>
+      </div>
+    </div>
+    
+    <script>
+      $(document).ready(function() {
+        console.log("Testing local Kendo...");
+        console.log("Kendo available:", typeof kendo !== 'undefined');
+        
+        if (typeof kendo !== 'undefined') {
+          // Initialize Kendo widgets
+          $("#datepicker").kendoDatePicker();
+          $("#textbox").kendoTextBox({
+            placeholder: "Enter some text..."
+          });
+          $("#demo-button").kendoButton({
+            click: function() {
+              alert("Kendo Button clicked!");
+            }
+          });
+          
+          // Initialize DropDownList with static data
+          $("#dropdownList").kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: [
+              { text: "Apple", value: "apple" },
+              { text: "Banana", value: "banana" },
+              { text: "Cherry", value: "cherry" },
+              { text: "Date", value: "date" },
+              { text: "Elderberry", value: "elderberry" }
+            ],
+            placeholder: "Select a fruit...",
+            change: function(e) {
+              console.log("Selected:", this.value(), this.text());
+            }
+          });
+          
+          
+          console.log("Kendo widgets initialized successfully");
+        } else {
+          console.error("Kendo not loaded");
+        }
+      });
+    </script>
+  </body>
+</html>
