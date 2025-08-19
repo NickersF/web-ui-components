@@ -73,9 +73,6 @@ function generateTreeView(data, containerId) {
             nodeMap[item.parent_id].children.push(nodeMap[item.id]);
         }
     });
-    
-    console.log(rootNodes);
-    console.log(nodeMap);
 
     // 4. Render the tree structure recursively
     rootNodes.forEach(rootNode => {
@@ -143,7 +140,6 @@ function renderNode(node, parentElement, isRoot) {
 // Usage
 generateTreeView(treeviewDataFlat, 'treeview2');
 
-
 // Toggles nodes with them all closed initially
 function toggleNodes() {
     document.querySelectorAll(".tv-node-root").forEach(function(node) {
@@ -204,8 +200,6 @@ function renderTreeViewLi(treeviewId, treeviewData) {
     
     let rootLevelNodes = treeviewData.filter(node => node.parent_id === null);
     
-    // console.log(rootLevelNodes);
-    
     rootLevelNodes.forEach(rootNode => {
         generateTreeViewNodesLi(rootNode, rootElement, treeviewData);
     });
@@ -217,8 +211,6 @@ function generateTreeViewNodesLi(node, parentElement, nodeData) {
         node: node,
         element: parentElement
     }];
-    
-    // console.log(nodeStack);
     
     while (nodeStack.length > 0) {
         let { 
@@ -247,57 +239,3 @@ function generateTreeViewNodesLi(node, parentElement, nodeData) {
         }
     }
 }
-
-// renderTreeViewLi("myTreeview", treeviewDataFlat);
-
-// Review of a stack basic basic basic
-class Stack {
-    constructor() {
-        this.items = [];
-    }
-    
-    push(item) {
-        this.items.push(item);
-    }
-    
-    pop() {
-        if (this.isEmpty()) {
-            return "Stack empty";
-        }
-        
-        return this.items.pop();
-    }
-    
-    peek() {
-        if (this.isEmpty()) {
-            return "Stack empty";
-        }
-        
-        return this.items[this.items.length - 1];
-    }
-    
-    isEmpty() {
-        return this.items.length === 0;
-    }
-    
-    size() {
-        return this.items.length;
-    }
-    
-    print() {
-        console.log(this.items);
-    }
-}
-
-// const stack = new Stack();
-//
-// stack.push(10);
-// stack.push(20);
-// stack.push(30);
-// stack.push(40);
-//
-// console.log(stack.peek());
-// console.log(stack.pop());
-// console.log(stack.size());
-// console.log(stack.isEmpty());
-// stack.print();
