@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "../base-css/reset.css";
+
+:root {
+    --bg-color: #202020;
+    --font-color: #F9F6EE;
+    --container-bg: #1C1C1C;
+}
+
+body {
+    display: flex;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+#container {
+    width: 128px;
+    height: 128px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0;
+    place-items: center;
+}
+
+.box {
+    background-color: #FA4F68;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+}
+
+.box-active {
+    background-color: #f6c624;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+}
