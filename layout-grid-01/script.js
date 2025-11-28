@@ -27,3 +27,15 @@ function handleBoxClick(el) {
     }
     console.log("Box clicked.", el);
 }
+
+// The 12 box container example
+let container12El = document.getElementById("container12");
+let box12Divs = [];
+
+for (let i = 0; i < 48; i++) {
+    const boxDiv = document.createElement("div");
+    boxDiv.classList.add("box");
+    boxDiv.id = `box12${i}`;
+    container12El.append(boxDiv);
+    box12Divs.push(boxDiv);
+}
