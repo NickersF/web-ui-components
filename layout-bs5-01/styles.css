@@ -9,3 +9,19 @@
 .bg-col-sm-4 {
     background-color: #3e3671;
 }
+
+.bg-col-md-4 {
+    background-color: #43405f;
+}
+
+.bg-col-lg-4 {
+    background-color: #272b65;
+}
+
+.bg-col-xl-4 {
+    background-color: #3b435f;
+}
+
+.bg-col-xxl-4 {
+    background-color: #3c3c51;
+}
