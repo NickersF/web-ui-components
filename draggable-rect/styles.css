@@ -1,0 +1,16 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "../base-css/reset.css";
+
+.container {
+    width: 1024px;
+    height: 768px;
+    background-color: #e2e2e2;
+    position: relative;
+}
+
+.rect {
+    width: 128px;
+    height: 128px;
+    background-color: #02a8d4;
+    position: absolute;
+}
